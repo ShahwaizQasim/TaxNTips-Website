@@ -1,0 +1,24 @@
+.bg-Image{
+    background-image: url('/12.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bg-Image1{
+    background-image: url('/4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bg-Image2{
+    background-image: url('/2-1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bg-Image3{
+    background-image: url('/slider2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
