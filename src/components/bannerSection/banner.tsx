@@ -12,7 +12,7 @@ const BannerSection: NextPage<Props> = ({}) => {
         <div className="relative bottom-[136px]">
           {/* Background Image */}
           <img
-            src="/flip5.jpg"
+            src="/.jpg"
             alt="Flip Phone"
             className="w-full h-[30vw] object-fill brightness-[0.5]"
           />
