@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from "react";
 import Image from "next/image";
+import { motion } from 'framer-motion';
 
 const features = [
     {
@@ -34,13 +35,55 @@ const features = [
 const AccountingFeatures: React.FC = () => {
     const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
 
+    const headingText = [
+        "Smart Accounting, Lower Taxes and",
+        "Financial Peace of Mind"
+      ];
+     
+      const wordVariants = {
+        hidden: { opacity: 0, x: 40 },
+        visible: {
+          opacity: 1,
+          x: 0,
+          transition: {
+            duration: 0.4,
+          },
+        },
+      };
+    
+      const containerVariants = {
+        hidden: {},
+        visible: {
+          transition: {
+            staggerChildren: 0.1,
+          },
+        },
+      };
+    
+
     return (
         <section className="bg-[#111] min-h-screen flex flex-col items-center justify-center py-16 px-4 relative bottom-16">
             <div className="text-orange-400 font-semibold text-lg mb-4 text-center">✨ What We Do</div>
-            <h1 className="text-white text-5xl md:text-5xl font-extrabold text-center mb-12">
-                Smart Accounting, Lower Taxes, and <br />
-                Financial Peace of Mind
-            </h1>
+            <center>
+            <motion.h1
+                className="text-5xl lg:text-5xl font-bold text-white leading-tight mb-6 flex flex-col justify-center"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.6 }}
+              >
+                {headingText.map((line, lineIndex) => (
+                  <div key={lineIndex} className="flex flex-wrap justify-center">
+                    {line.split(" ").map((word, wordIndex) => (
+                      <motion.span key={wordIndex} variants={wordVariants} className="mr-2">
+                        {word}
+                      </motion.span>
+                    ))}
+                  </div>
+                ))}
+              </motion.h1>
+            </center>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-24 gap-y-8 w-full max-w-5xl mt-3">
                 {features.map((feature, idx) => (
                     <div

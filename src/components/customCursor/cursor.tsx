@@ -37,10 +37,10 @@ function CustomCursor() {
 
   return (
     <div
-      className={`relative fixed w-8 h-8 rounded-full pointer-events-none z-1 transition-all duration-100 flex justify-center items-center
-        ${isHovering ? 'bg-orange-500 opacity-35 scale-300' : 'z-50 border-2 border-[#F65E47]'}
+      className={`fixed w-8 h-8 rounded-full pointer-events-none z-[9999] transition-all duration-100 flex justify-center items-center
+        ${isHovering ? 'bg-orange-500 opacity-35 scale-300' : ' border-2 border-[#F65E47]'}
         ${isClicked ? 'scale-75 opacity-80' : ''}`}
-      style={{ left: `${position.x}px`, top: `${position.y}px` }}
+      style={{ left: `${position.x}px`, top: `${position.y}px`,transform: 'translate(-50%, -50%)', }}
     >
       <div className='w-1 h-1 rounded-full bg-[#F65E47]'></div>
     </div>

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 interface Props {}
 
-const BannerSection: NextPage<Props> = ({}) => {
+const BlogBannerSection: NextPage<Props> = ({}) => {
   return (
     <>
       <div>
@@ -51,15 +51,15 @@ const BannerSection: NextPage<Props> = ({}) => {
                 </a>
               </div>
             </div>
-          <div className=" absolute top-64 left-80  ">
-            <h1 className="text-5xl font-bold">About us</h1>
-            <div className="py-4 mt-4 rounded-[30px] flex gap-3 justify-center items-center border-1 border-orange-400 bg-[#34393D]">
+          <div className=" absolute top-64 left-80">
+            <h1 className="text-5xl font-bold">Blog</h1>
+            <div className="py-4 px-6 mt-4 rounded-[30px] flex gap-3 justify-center items-center border-1 border-orange-400 bg-[#34393D]">
                 <Link href={'/'} className="cursor-none interactive">
                 <h1>Home</h1>
                 </Link>
                 <SettingsIcon className="text-orange-400" />
                 <Link href={'/about'} className="cursor-none interactive">
-                <h1> About</h1>
+                <h1> Blog</h1>
                 </Link>
             </div>
           </div>
@@ -72,4 +72,4 @@ const BannerSection: NextPage<Props> = ({}) => {
   );
 };
 
-export default BannerSection;
+export default BlogBannerSection;

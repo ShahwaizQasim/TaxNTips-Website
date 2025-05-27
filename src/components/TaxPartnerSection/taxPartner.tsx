@@ -1,34 +1,63 @@
+'use client'
 import React from 'react';
 import { Star, ArrowRight, Monitor, TrendingUp, Award } from 'lucide-react';
 import ValueCard from '../ValueCard/value';
+import { motion } from 'framer-motion';
+
+const values = [
+  {
+    icon: <Monitor className="w-8 h-8 text-gray-700" />,
+    title: "Our Mission",
+    description: "We aim to provide proactive, reliable, & results-driven services for our clients to make informed decisions."
+  },
+  {
+    icon: <TrendingUp className="w-8 h-8 text-gray-700" />,
+    title: "Our Vision",
+    description: "We envision a future where every business & individual has access to professional & financial solutions."
+  },
+  {
+    icon: <Award className="w-8 h-8 text-gray-700" />,
+    title: "Our Values",
+    description: "Our services are designed to meet the unique needs of client, ensuring tailored & personalized solutions."
+  }
+];
+
+const principles = [
+  "Integrity & Trust",
+  "Expertise & Innovation",
+  "Commitment to Excellence"
+];
+
 
 const TaxPartnerSection: React.FC = () => {
-  const values = [
-    {
-      icon: <Monitor className="w-8 h-8 text-gray-700" />,
-      title: "Our Mission",
-      description: "We aim to provide proactive, reliable, & results-driven services for our clients to make informed decisions."
-    },
-    {
-      icon: <TrendingUp className="w-8 h-8 text-gray-700" />,
-      title: "Our Vision",
-      description: "We envision a future where every business & individual has access to professional & financial solutions."
-    },
-    {
-      icon: <Award className="w-8 h-8 text-gray-700" />,
-      title: "Our Values",
-      description: "Our services are designed to meet the unique needs of client, ensuring tailored & personalized solutions."
-    }
+
+  const headingText = [
+    "Your Partner in Smart",
+    "Tax & Business",
+    "Solutions"
   ];
 
-  const principles = [
-    "Integrity & Trust",
-    "Expertise & Innovation",
-    "Commitment to Excellence"
-  ];
+  const wordVariants = {
+    hidden: { opacity: 0, x: 40 },  // Start from right
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.4, ease: 'easeOut' },
+    },
+  };
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+  
 
   return (
-    <div className="min-h-screen bg-[#FFFFFF] py-16 relative bottom-14">
+    <div className="min-h-screen bg-[#FFFFFF] py-16 relative bottom-[130px]">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="flex items-center gap-2 mb-8">
@@ -41,13 +70,23 @@ const TaxPartnerSection: React.FC = () => {
           {/* Left Content */}
           <div className="lg:col-span-2 space-y-4">
             <div>
-              <h1 className="text-5xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
-                Your Partner in Smart
-                <br />
-                <span className="text-gray-900">Tax & Business</span>
-                <br />
-                <span className="text-gray-900">Solutions</span>
-              </h1>
+              <motion.h1
+                className="text-5xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6 flex flex-col"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"    
+                viewport={{ once: true, amount: 0.6 }}
+              >
+                {headingText.map((line, lineIndex) => (
+                  <div key={lineIndex} className="flex flex-wrap justify-start">
+                    {line.split(" ").map((word, wordIndex) => (
+                      <motion.span key={wordIndex} variants={wordVariants} className="mr-2">
+                        {word}
+                      </motion.span>
+                    ))}
+                  </div>
+                ))}
+              </motion.h1>
             </div>
 
             {/* Principles List */}
@@ -64,7 +103,7 @@ const TaxPartnerSection: React.FC = () => {
 
             {/* Learn More Button */}
             <div className="pt-4">
-              <button className="group cursor-none interactive bg-black hover:bg-gray-800 text-white px-8 py-2 rounded-full font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-3">
+              <button className="group cursor-none bg-black hover:bg-gray-800 text-white px-8 py-2 rounded-full font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl flex items-center gap-3 interactive">
                 Learn More
                 <div className='bg-white rounded-full p-1'>
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform text-black duration-200" />
@@ -95,7 +134,7 @@ const TaxPartnerSection: React.FC = () => {
           </div>
         </div>
 
-    
+
       </div>
     </div>
   );

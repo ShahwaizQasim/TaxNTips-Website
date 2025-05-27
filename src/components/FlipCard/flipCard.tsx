@@ -10,8 +10,8 @@ const FlipCard: React.FC<FlipCardProps> = ({ service }) => {
                 {/* Front */}
                 <div className="absolute inset-0 bg-transparent bg-opacity-80 border border-gray-700 rounded-xl p-8 flex flex-col justify-start backface-hidden">
                     <div className="mb-6">{service.icon}</div>
-                    <h3 className="text-xl font-semibold text-white mb-4">{service.title}</h3>
-                    <p className="text-gray-300 text-sm leading-relaxed">{service.description}</p>
+                    <h3 className="text-2xl font-semibold text-white mb-4">{service.title}</h3>
+                    <p className="text-gray-300 text-lg leading-relaxed">{service.description}</p>
                 </div>
 
                 {/* Back */}
@@ -19,7 +19,7 @@ const FlipCard: React.FC<FlipCardProps> = ({ service }) => {
                     style={{ backgroundImage: `url(${service.backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}
                 >
                     <div className="flex justify-center items-center">
-                        <button className=" interactive bg-gradient-to-r  from-orange-300 to-orange-500 cursor-none hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold text-lg transition-colors duration-200 shadow-lg hover:shadow-xl">Read More</button>
+                        <button className=" interactive  bg-gradient-to-r  from-orange-300 to-orange-500 cursor-none hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold text-lg transition-colors duration-200 shadow-lg hover:shadow-xl  ">Read More</button>
                     </div>
                 </div>
             </div>

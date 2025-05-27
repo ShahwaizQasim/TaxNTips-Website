@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
             <div className={`flex justify-center w-full ${isScrolled ? 'px-0' : 'py-0 px-4'}`}>
                 <div className={`transition-all duration-300 w-full ${isScrolled ? '' : 'max-w-7xl'}`}>
 
-                    <nav className={`${isScrolled ? 'bg-transparent' : 'bg-[#220210]'} text-white shadow-lg transition-all duration-300 ${isScrolled ? 'rounded-none px-6' : 'rounded-l-2xl rounded-r-2xl px-6 py-4'} overflow-hidden`}>
+                    <nav className={`${isScrolled ? 'bg-transparent' : 'bg-[#220210]'} text-white shadow-lg transition-all duration-300 ${isScrolled ? 'rounded-none px-6' : 'rounded-l-2xl rounded-r-2xl px-6 py-4'}`}>
                         <div className="flex justify-between items-center min-h-[80px]">
                             {/* Logo */}
                             <div className="flex max-w-1/2 items-center flex-shrink-0 relative left-4 ">
@@ -58,17 +58,53 @@ const Navbar: React.FC = () => {
                             <div className="hidden md:flex items-center justify-center flex-grow">
                                 <div className="flex items-center space-x-4">
                                     {navItems.map((item, index) => (
-                                        <div key={item.href} className="flex items-center group">
+                                        <div key={item.href} className={`relative flex items-center group interactive ${item.label === 'Services' ? 'hoverable-dropdown' : ''
+                                            }`}>
                                             <Link
                                                 href={item.href}
-                                                className={`px-3 py-2 text-sm font-semibold transition-colors  duration-200 group-hover:text-[#F65E47] whitespace-nowrap ${index === 0 ? 'text-[#F65E47]' : 'text-white'
-                                                    } interactive`}
+                                                className={`px-3 py-2 text-sm  cursor-none font-semibold interactive cursor-pointer transition-colors  duration-200 group-hover:text-[#F65E47] whitespace-nowrap ${index === 0 ? 'text-[#F65E47]' : 'text-white'
+                                                    } `}
                                             >
                                                 {item.label}
                                             </Link>
                                             {index <= navItems.length - 1 && (
-                                                <span className={`group-hover:text-[#F65E47] text-3xl pt-2 ${index === 0 ? 'text-[#F65E47]' : 'text-white'
+                                                <span className={`group-hover:text-[#F65E47] interactive text-3xl pt-2 ${index === 0 ? 'text-[#F65E47]' : 'text-white'
                                                     }`}>*</span>
+                                            )}
+                                            {/* Dropdown for Services */}
+                                            {item.label === 'Services' && (
+                                                <div className="absolute top-[100%] left-0 z-50 w-[260px] bg-[#220210] rounded-md shadow-lg
+    opacity-0 translate-y-2 scale-95 pointer-events-none
+    group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 group-hover:pointer-events-auto
+    transition-all duration-300 ease-out delay-150 py-4">
+                                                    <ul className="flex flex-col text-white text-sm py-2">
+                                                        <li>
+                                                            <Link href="/service/business-tax" className="block px-4 py-2 hover:bg-[#3A3A3A] hover:translate-x-1 hover:underline hover:decoration-white decoration-2 underline-offset-[2px] transition-all duration-200">
+                                                                Business Tax Preparation
+                                                            </Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link href="/service/bookkeeping" className="block px-4 py-2 hover:bg-[#3A3A3A] hover:translate-x-1 hover:underline hover:decoration-white decoration-2 underline-offset-[2px] transition-all duration-200">
+                                                                Bookkeeping Services
+                                                            </Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link href="/service/tax-strategy" className="block px-4 py-2 hover:bg-[#3A3A3A] hover:translate-x-1 hover:underline hover:decoration-white decoration-2 underline-offset-[2px] transition-all duration-200">
+                                                                Tax Strategy & Reduction Planning
+                                                            </Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link href="/service/s-corp" className="block px-4 py-2 hover:bg-[#3A3A3A] hover:translate-x-1 hover:underline hover:decoration-white decoration-2 underline-offset-[2px] transition-all duration-200">
+                                                                S-Corp Set-up
+                                                            </Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link href="/service/llc" className="block px-4 py-2 hover:bg-[#3A3A3A] hover:translate-x-1 hover:underline hover:decoration-white decoration-2 underline-offset-[2px] transition-all duration-200">
+                                                                Business & LLC Set-Up
+                                                            </Link>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             )}
                                         </div>
                                     ))}

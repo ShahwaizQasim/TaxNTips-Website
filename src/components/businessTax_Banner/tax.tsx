@@ -4,7 +4,7 @@ import Link from "next/link";
 
 interface Props {}
 
-const BannerSection: NextPage<Props> = ({}) => {
+const BusinessTaxBanner: NextPage<Props> = ({}) => {
   return (
     <>
       <div>
@@ -51,25 +51,24 @@ const BannerSection: NextPage<Props> = ({}) => {
                 </a>
               </div>
             </div>
-          <div className=" absolute top-64 left-80  ">
-            <h1 className="text-5xl font-bold">About us</h1>
-            <div className="py-4 mt-4 rounded-[30px] flex gap-3 justify-center items-center border-1 border-orange-400 bg-[#34393D]">
+          <div className=" absolute top-64 left-80">
+            <h1 className="text-5xl font-bold">Business Tax Preparation</h1>
+            <div className="py-4 w-[350px] rounded-[30px] mt-6 flex gap-2 justify-center items-center border-1 border-orange-400 bg-[#34393D]">
                 <Link href={'/'} className="cursor-none interactive">
                 <h1>Home</h1>
                 </Link>
                 <SettingsIcon className="text-orange-400" />
-                <Link href={'/about'} className="cursor-none interactive">
-                <h1> About</h1>
+                <Link href={'/service/business-tax'} className="cursor-none interactive">
+                <h1>Business Tax Preparation</h1>
                 </Link>
             </div>
           </div>
           </div>
-
         </div>
       </div>
-      <div className="h-2 bg-gradient-to-r from-orange-300 to-orange-500 w-[100%] rounded-b-2xl mx-auto relative bottom-[136px] " />
+      <div className="h-2 bg-gradient-to-r from-orange-300 to-orange-500 w-[100%] rounded-b-2xl mx-auto relative bottom-[136px] " ></div>
     </>
   );
 };
 
-export default BannerSection;
+export default BusinessTaxBanner;

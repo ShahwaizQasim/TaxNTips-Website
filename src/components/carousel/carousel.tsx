@@ -40,7 +40,7 @@ export default function Carousel() {
     };
 
     return (
-        <div className="w-[100%] h-[800px] relative bottom-[130px] left-0">
+        <div className="w-[100%] h-[800px] relative bottom-[160px] left-0">
             <Slider {...settings}>
                 <div className="w-full h-[800px] flex items-center relative z-10 justify-center bg-Image">
                 </div>

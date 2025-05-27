@@ -1,5 +1,4 @@
 import Navbar from "@/components/navbar/navbar";
-import "./globals.css"
 import Carousel from "@/components/carousel/carousel";
 import HeroSection from "@/components/heroSection/heroSec";
 import QuoteSection from "@/components/QuoteSection/quote";
@@ -10,6 +9,7 @@ import ChooseTax from "@/components/chooseTax/chooseTax";
 import Footer from "@/components/footer/footer";
 import BlogSection from "@/components/blogsSection/blogs";
 import TestimonialSection from "@/components/Testimonial/testimonial";
+
 export default function Home() {
   return (
     <>

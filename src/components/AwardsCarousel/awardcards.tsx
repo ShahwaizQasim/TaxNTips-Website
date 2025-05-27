@@ -113,13 +113,13 @@ const AwardsCarousel: React.FC = () => {
     };
 
     return (
-        <div className="w-full max-w-6xl mx-auto px-4 py-12 bg-[#FFFFFF] relative bottom-[240px] left-0">
+        <div className="w-full max-w-6xl mx-auto px-4 py-12 bg-[#FFFFFF] relative bottom-[260px] left-0">
             {/* Header */}
             <div className="text-center mb-12">
                 <p className="text-black font-bold text-sm uppercase tracking-wide mb-2">
                     🏅 Our industry leading practices and capabilities.
                 </p>
-                <h2 className="text-5xl md:text-5xl font-bold mt-2 text-gray-900">
+                <h2 className="text-5xl md:text-5xl font-bold mt-4 text-gray-900">
                     Awards
                 </h2>
             </div>

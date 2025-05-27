@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
 import { Star, TrendingUp } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface StatisticProps {
     value: string;
@@ -26,6 +27,10 @@ const Statistic: React.FC<StatisticProps> = ({ value, label, percentage }) => (
 );
 
 const QuoteSection: React.FC = () => {
+
+    const heading = "Welcome to Tax N Tips";
+    const words = heading.split(" ");
+
     return (
         <div className="min-h-screen bg-[#FFFFFF]">
             {/* Main Content */}
@@ -36,9 +41,19 @@ const QuoteSection: React.FC = () => {
                     <div className="relative">
                         <div className="relative w-full h-96 lg:h-[600px] rounded-3xl overflow-hidden">
                             {/* Placeholder for image */}
-                            <div className="absolute inset-0 left-14 flex items-center justify-center">
-                                <img src="/h2-banner2.jpg" alt="banner" className='w-full h-full object-contain' />
-                            </div>
+                            <motion.div
+                                className="absolute inset-0 left-14 flex items-center justify-center"
+                                initial={{ x: -100, y: -100, opacity: 0 }}
+                                whileInView={{ x: 0, y: 0, opacity: 1 }}
+                                transition={{ duration: 1, ease: 'easeOut' }}
+                                viewport={{ once: true }}
+                            >
+                                <img
+                                    src="/h2-banner2.jpg"
+                                    alt="banner"
+                                    className="w-full h-full object-contain"
+                                />
+                            </motion.div>
                         </div>
                     </div>
                     {/* Left Content */}
@@ -48,8 +63,19 @@ const QuoteSection: React.FC = () => {
                                 <Star className="w-5 h-5 text-orange-500 fill-current" />
                                 <span className="text-orange-500 font-medium text-sm">Who We Are</span>
                             </div>
-                            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                                Welcome to Tax N Tips
+                            <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6" >
+                                {words.map((word, index) => (
+                                    <motion.span
+                                        key={index}
+                                        className="mr-2"
+                                        initial={{ opacity: 0, x: 20 }}
+                                        whileInView={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                                        viewport={{ once: false, amount: 0.6 }}
+                                    >
+                                        {word}
+                                    </motion.span>
+                                ))}
                             </h1>
                             <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
                                 At Tax N Tips, we believe that smart tax planning and strategic financial
@@ -75,7 +101,7 @@ const QuoteSection: React.FC = () => {
 
                         {/* CTA Button */}
                         <div>
-                            <button className="interactive  bg-gradient-to-r  from-orange-300 to-orange-500 cursor-none hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold text-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
+                            <button className="interactive bg-gradient-to-r  from-orange-300 to-orange-500 cursor-none hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold text-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
                                 Get a quote
                             </button>
                         </div>
@@ -84,13 +110,6 @@ const QuoteSection: React.FC = () => {
 
                 </div>
             </div>
-
-            {/* Scroll Indicator */}
-            {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-                <div className="w-8 h-8 bg-gray-900 rounded-full flex items-center justify-center cursor-pointer hover:bg-gray-700 transition-colors">
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                </div>
-            </div> */}
         </div>
     );
 };
