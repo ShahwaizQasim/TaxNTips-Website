@@ -57,7 +57,7 @@ const TaxPartnerSection: React.FC = () => {
   
 
   return (
-    <div className="min-h-screen bg-[#FFFFFF] py-16 relative bottom-[130px]">
+    <div className="min-h-screen bg-[#FFFFFF] py-16 pb-8 md:pb-16 lg:pb-[130px] h-fit">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="flex items-center gap-2 mb-8">
@@ -113,7 +113,7 @@ const TaxPartnerSection: React.FC = () => {
           </div>
 
           {/* Right Content - Cards */}
-          <div className="lg:col-span-3 space-y-6 bg-[#F7F7F7] p-10 pb-40 rounded-[10%] relative">
+          <div className="lg:col-span-3 space-y-6 bg-[#F7F7F7] p-10 pb-40 rounded-[10%] relative min-h-[300px]">
             <p className="text-lg text-gray-600 mb-8">
               Simplify tax planning, enhance financial efficiency, and empower businesses with the
               right strategies for long-term success. Whether you're a small business owner, a startup
@@ -121,7 +121,7 @@ const TaxPartnerSection: React.FC = () => {
               step of the way.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-2 absolute ">
+            <div className="flex flex-col sm:flex-row gap-2 ">
               {values.map((value, index) => (
                 <ValueCard
                   key={index}

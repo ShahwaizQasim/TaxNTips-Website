@@ -19,7 +19,9 @@ export default function Home() {
       <QuoteSection />
       <TaxPartnerSection />
       <AwardsCarousel />
+      <div className="mt-24">
       <AccountingFeatures />
+      </div>
       <ChooseTax />
       <BlogSection />
       <TestimonialSection />

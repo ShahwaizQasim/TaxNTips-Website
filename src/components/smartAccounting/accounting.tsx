@@ -62,7 +62,7 @@ const AccountingFeatures: React.FC = () => {
     
 
     return (
-        <section className="bg-[#111] min-h-screen flex flex-col items-center justify-center py-16 px-4 relative bottom-16">
+        <section className="bg-[#111] min-h-screen flex flex-col items-center justify-center py-16 px-4">
             <div className="text-orange-400 font-semibold text-lg mb-4 text-center">✨ What We Do</div>
             <center>
             <motion.h1

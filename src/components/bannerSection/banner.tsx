@@ -9,20 +9,21 @@ const BannerSection: NextPage<Props> = ({}) => {
     <>
       <div>
         {/* Banner Section */}
-        <div className="relative bottom-[136px]">
-          {/* Background Image */}
-          <img
-            src="/about-banner.jfif"
-            alt="Flip Phone"
-            className="w-full h-[30vw] object-fill brightness-[0.5]"
-          />
+        <div className="relative bottom-[136px] py-32 pb-[400px]" style={{
+          backgroundImage: "url('/bg-page-title1.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
+          
+        }}>
 
           {/* Overlay Content */}
           <div className="about-banner-content absolute inset-0 flex flex-col justify-start text-white p-6 ">
             {/* Top contact + icons */}
-            <div className="flex justify-between py-[1vw] px-[10vw] relative bottom-[20px]">
+            {/* <div className="lg:flex justify-between py-[1vw] px-[10vw] relative lg:block hidden">
               <div className="flex">
-                <h1 className="mr-4 relative ">
+                <h1 className="mr-4 ">
                   PO Box 11224 Spring, TX, United States, Texas 77379
                 </h1>
                 <h1>+786 688 7861</h1>
@@ -50,15 +51,15 @@ const BannerSection: NextPage<Props> = ({}) => {
                   <Instagram size={22} />
                 </a>
               </div>
-            </div>
-          <div className=" absolute top-64 left-80  ">
+            </div> */}
+          <div className=" absolute top-64 lg:left-80 left-20  ">
             <h1 className="text-5xl font-bold">About us</h1>
             <div className="py-4 mt-4 rounded-[30px] flex gap-3 justify-center items-center border-1 border-orange-400 bg-[#34393D]">
-                <Link href={'/'} className="cursor-none interactive">
+                <Link href={'/'} className="cursor-pointer interactive">
                 <h1>Home</h1>
                 </Link>
                 <SettingsIcon className="text-orange-400" />
-                <Link href={'/about'} className="cursor-none interactive">
+                <Link href={'/about'} className="cursor-pointer interactive">
                 <h1> About</h1>
                 </Link>
             </div>

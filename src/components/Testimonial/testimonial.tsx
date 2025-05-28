@@ -18,7 +18,7 @@ const testimonials = [
     image: '/h2-testimonial-thumb-2.png',
     feedback:
       'Very responsive and supportive. Helped us streamline all our filings. Will be working with them long-term!',
-    mainImage: '/h2-testimonial-2.png', 
+    mainImage: '/h2-testimonial-2.png',
   },
   {
     name: 'Anita P.',
@@ -26,7 +26,7 @@ const testimonials = [
     image: '/h2-testimonial-thumb-3.png',
     feedback:
       'From S-Corp setup to tax planning, everything was handled smoothly. Amazing service!',
-    mainImage: '/h2-testimonial-3.png', 
+    mainImage: '/h2-testimonial-3.png',
   },
 ];
 
@@ -41,67 +41,77 @@ export default function TestimonialSection() {
     setActiveIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
   };
 
-  const handleThumbnailClick = (index :any) => {
+  const handleThumbnailClick = (index: number) => {
     setActiveIndex(index);
   };
 
   const active = testimonials[activeIndex];
 
   return (
-    <section className="py-24 bg-white text-center px-4">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 items-center">
-        {/* Side avatars */}
-        <div className="flex flex-col items-center gap-6 relative">
-          <button onClick={handleUp}>
-            <ChevronUp className="w-4 h-4 text-black mb-1 cursor-pointer" />
+    <section className="py-16 sm:py-24 bg-white px-4 sm:px-6 md:px-12 lg:px-24">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+
+        {/* Side avatars + buttons */}
+        <div className="flex flex-col items-center gap-6 relative order-2 md:order-1">
+          <button
+            onClick={handleUp}
+            aria-label="Previous testimonial"
+            className="p-2 rounded-full hover:bg-gray-100 active:bg-gray-200 transition"
+          >
+            <ChevronUp className="w-6 h-6 text-gray-700" />
           </button>
 
-          {testimonials.map((t, i) => (
-            <div
-              key={i}
-              onClick={() => handleThumbnailClick(i)}
-              className={`rounded-full w-[100px] h-[100px] overflow-hidden border-2 cursor-pointer transition-all ${
-                i === activeIndex ? 'border-orange-500 scale-110' : 'border-transparent'
-              }`}
-            >
-              <img
-                src={t.image}
-                alt={t.name}
-                width={56}
-                height={56}
-                className="object-cover w-full h-full"
-              />
-            </div>
-          ))}
+          <div className="flex flex-row md:flex-col gap-4">
+            {testimonials.map((t, i) => (
+              <div
+                key={i}
+                onClick={() => handleThumbnailClick(i)}
+                className={`rounded-full w-20 h-20 md:w-24 md:h-24 overflow-hidden border-2 cursor-pointer transition-transform duration-300 ${
+                  i === activeIndex
+                    ? 'border-orange-500 scale-110'
+                    : 'border-transparent hover:border-orange-300'
+                }`}
+              >
+                <img
+                  src={t.image}
+                  alt={t.name}
+                  className="object-cover w-full h-full"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
 
-          <button onClick={handleDown} className='interactive'>
-            <ChevronDown className="w-4 h-4 text-black mt-1 cursor-pointer pointer-events-auto" />
+          <button
+            onClick={handleDown}
+            aria-label="Next testimonial"
+            className="p-2 rounded-full hover:bg-gray-100 active:bg-gray-200 transition"
+          >
+            <ChevronDown className="w-6 h-6 text-gray-700" />
           </button>
         </div>
 
         {/* Large avatar */}
-        <div className="flex justify-center relative -left-20">
-          <div className="w-[400px] h-[400px] rounded-full overflow-hidden shadow-md">
+        <div className="flex justify-center order-1 md:order-2">
+          <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden shadow-lg">
             <img
               src={active.mainImage}
               alt={active.name}
-              width={300}
-              height={300}
-              className="object-cover w-full h-full transition-all duration-300"
+              className="object-cover w-full h-full transition-transform duration-300"
             />
           </div>
         </div>
 
         {/* Text content */}
-        <div className="text-left space-y-4 px-2 py-6 relative -left-10">
+        <div className="text-left space-y-4 px-4 sm:px-6 order-3 md:order-3 max-w-xl mx-auto md:mx-0">
           <div className="text-sm text-orange-500 italic">★ Our Feedback</div>
-          <h2 className="lg:text-4xl lg:font-[800]">
+          <h2 className="text-3xl sm:text-4xl font-extrabold leading-tight">
             What People Say
             <br />
             About Us
           </h2>
-          <p className="text-gray-500 text-sm">{active.feedback}</p>
-          <p className="mt-10 text-[16px] text-gray-700 ">
+          <p className="text-gray-600 text-base sm:text-lg">{active.feedback}</p>
+          <p className="mt-6 text-lg font-semibold text-gray-700">
             {active.role} <br />
             <span className="bg-gradient-to-r from-orange-500 to-orange-300 bg-[length:200%_100%] bg-left bg-clip-text text-transparent font-bold">
               {active.name}

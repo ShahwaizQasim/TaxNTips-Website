@@ -65,64 +65,67 @@ const BusinessTax: NextPage<Props> = ({ }) => {
     return <div>
         <Navbar2 />
         <div>
-            {/* Banner Section */}
-            <div className="relative bottom-[136px]">
-                {/* Background Image */}
-                <img
-                    src="/about-banner.jfif"
-                    alt="Flip Phone"
-                    className="w-full h-[30vw] object-fill brightness-[0.5]"
-                />
+        {/* Banner Section */}
+        <div className="relative bottom-[136px] py-32 pb-[400px]" style={{
+          backgroundImage: "url('/bg-page-title1.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
+          
+        }}>
 
-                {/* Overlay Content */}
-                <div className="about-banner-content absolute inset-0 flex flex-col justify-start text-white p-6 ">
-                    {/* Top contact + icons */}
-                    <div className="flex justify-between py-[1vw] px-[10vw] relative bottom-[20px]">
-                        <div className="flex">
-                            <h1 className="mr-4 relative ">
-                                PO Box 11224 Spring, TX, United States, Texas 77379
-                            </h1>
-                            <h1>+786 688 7861</h1>
-                        </div>
-                        <div className="flex space-x-4">
-                            <a
-                                href="https://facebook.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <Facebook size={22} />
-                            </a>
-                            <a
-                                href="https://linkedin.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <Linkedin size={22} />
-                            </a>
-                            <a
-                                href="https://instagram.com"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <Instagram size={22} />
-                            </a>
-                        </div>
-                    </div>
-                    <div className=" absolute top-64 left-80">
-                        <h1 className="text-5xl font-bold">S-Corp Set-up</h1>
-                        <div className="py-4 w-[350px] rounded-[30px] mt-6 flex gap-2 justify-center items-center border-1 border-orange-400 bg-[#34393D]">
-                            <Link href={'/'} className="cursor-none interactive">
-                                <h1>Home</h1>
-                            </Link>
-                            <SettingsIcon className="text-orange-400" />
-                            <Link href={'/service/business-tax'} className="cursor-none interactive">
-                                <h1>S-Corp Set-up</h1>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
+          {/* Overlay Content */}
+          <div className="about-banner-content absolute inset-0 flex flex-col justify-start text-white p-6 ">
+            {/* Top contact + icons */}
+            {/* <div className="lg:flex justify-between py-[1vw] px-[10vw] relative lg:block hidden">
+              <div className="flex">
+                <h1 className="mr-4 ">
+                  PO Box 11224 Spring, TX, United States, Texas 77379
+                </h1>
+                <h1>+786 688 7861</h1>
+              </div>
+              <div className="flex space-x-4">
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Facebook size={22} />
+                </a>
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Linkedin size={22} />
+                </a>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Instagram size={22} />
+                </a>
+              </div>
+            </div> */}
+          <div className=" absolute top-64 lg:left-80 left-20  ">
+            <h1 className="text-5xl font-bold">S-Corp Set-up</h1>
+            <div className="py-4 mt-4 rounded-[30px] flex gap-3 justify-center items-center border-1 border-orange-400 bg-[#34393D]">
+                <Link href={'/'} className="cursor-none interactive">
+                <h1>Home</h1>
+                </Link>
+                <SettingsIcon className="text-orange-400" />
+                <Link href={'/service/s-corp'} className="cursor-none interactive">
+                <h1> S-Corp Set-up</h1>
+                </Link>
             </div>
+          </div>
+          </div>
+
         </div>
+      </div>
+      <div className="h-2 bg-gradient-to-r from-orange-300 to-orange-500 w-[100%] rounded-b-2xl mx-auto relative bottom-[136px] " />
         <div className="h-2 bg-gradient-to-r from-orange-300 to-orange-500 w-[100%] rounded-b-2xl mx-auto relative bottom-[136px] " ></div>
         <div className="min-h-screen relative bottom-[130px]">
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -133,7 +136,7 @@ const BusinessTax: NextPage<Props> = ({ }) => {
                         <section className="bg-white rounded-lg p-8 mb-8 ">
                             <div className="flex flex-col gap-8 items-center ">
                                 <div>
-                                    <h1 className="text-[44px] font-[700] text-black mb-6">
+                                    <h1 className="lg:text-[44px] text-3xl font-[700] text-black mb-6">
                                         Simplify Your Business Formation with Tax N Tips
                                     </h1>
                                     <div className="space-y-4 text-gray-600">
@@ -162,7 +165,7 @@ const BusinessTax: NextPage<Props> = ({ }) => {
                                 </div>
                                 <div className='flex gap-8'>
 
-                                    <div className=" rounded-lg w-1/2">
+                                    <div className=" rounded-lg lg:w-1/2 lg:block hidden">
                                         <img src="/flip1.jpg" alt="" className='w-full h-full rounded-2xl hover:scale-105 transition-all duration-300' />
                                     </div>
                                     <div className="space-y-4">

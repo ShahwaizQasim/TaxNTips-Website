@@ -18,9 +18,12 @@ const Footer = () => {
           <p className="text-[14px] mt-4 text-white">
             At Tax N Tips, we believe that smart tax planning and strategic financial management are the cornerstones of financial success.
           </p>
-          <button className="mt-4 bg-gradient-to-r from-orange-400 to-orange-600 hover:opacity-90 text-white interactive font-semibold py-2 px-4 rounded-full text-sm">
-            Read More
-          </button>
+          <Link href={'/about'}>
+            <button className="mt-4 bg-gradient-to-r from-orange-400 cursor-pointer to-orange-600 hover:opacity-90 text-white interactive font-semibold py-2 px-4 rounded-full text-sm">
+              Read More
+            </button>
+          </Link>
+
         </div>
 
         {/* Resources */}
@@ -53,7 +56,7 @@ const Footer = () => {
         {/* Newsletter */}
         <div>
           <h3 className="text-2xl font-bold">Join Newsletter</h3>
-          <div className="flex gap-4 relative left-12 text-white text-lg mt-12">
+          <div className="flex gap-4 relative lg:left-12 left-0 text-white text-lg mt-12">
             <Link href="#"><Facebook className="hover:text-orange-400 w-5 h-5" /></Link>
             <Link href="#"><Linkedin className="hover:text-orange-400 w-5 h-5" /></Link>
             <Link href="#"><Instagram className="hover:text-orange-400 w-5 h-5" /></Link>

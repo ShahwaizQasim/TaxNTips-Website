@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function ChooseTax() {
 
@@ -19,7 +20,7 @@ export default function ChooseTax() {
   };
 
   const wordVariants = {
-    hidden: { opacity: 0, x: 40 },  // Start from right (x positive)
+    hidden: { opacity: 0, x: 40 },
     visible: {
       opacity: 1,
       x: 0,
@@ -28,7 +29,8 @@ export default function ChooseTax() {
   };
 
   return (
-    <section className="w-full px-4 md:px-24 flex flex-col-reverse md:flex-row items-center justify-between relative overflow-hidden py-52"
+    <section
+      className="w-full px-4 sm:px-8 md:px-16 lg:px-24 flex flex-col-reverse md:flex-row items-center justify-between relative overflow-hidden py-20 md:py-32 lg:py-48"
       style={{
         backgroundImage: 'url("/h2-bg-section4.jpg")',
         backgroundSize: 'cover',
@@ -36,35 +38,38 @@ export default function ChooseTax() {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      {/* Left Side - Image & Text */}
-      <div className="relative w-full md:w-1/2 flex justify-center md:justify-start">
+      {/* Left Side - Image & Charts */}
+      <div className="relative w-full md:w-1/2 flex justify-center md:justify-start mb-10 md:mb-0" style={{ aspectRatio: '9 / 8' }}>
         <Image
           src="/h2-banner-8.png"
           alt="Thumbs up guy"
-          width={650}
-          height={600}
-          className="z-10 relative top-0 left-50"
+          fill
+          style={{ objectFit: 'contain' }}
+          className="relative z-10"
+          priority
+          sizes="(max-width: 768px) 100vw, 450px"
         />
 
         {/* Chart and Graph Mockups */}
-        <div className="absolute left-64 top-[60%] z-20 bg-white shadow-md rounded-md p-2">
+        <div className="hidden md:block absolute left-24 top-[55%] z-20 bg-white shadow-md rounded-md p-2">
           <Image src="/h1-shape-3.png" alt="Bar chart" width={120} height={40} />
         </div>
-        <div className="absolute right-0 bottom-[17%] z-20  shadow-md rounded-md p-2">
+        <div className="hidden md:block absolute right-0 bottom-[15%] z-20 shadow-md rounded-md p-2">
           <Image src="/line-chart.png" alt="Line chart" width={200} height={160} />
         </div>
-        <div className="absolute right-6 top-[20%] z-20 ">
-          <Image src="/h2-section-text1.png" alt="Line chart" width={200} height={160} />
+        <div className="hidden md:block absolute right-6 top-[15%] z-20">
+          <Image src="/h2-section-text1.png" alt="Text graphic" width={200} height={160} />
         </div>
       </div>
 
-      {/* Right Side - Text */}
-      <div className="w-full md:w-1/2 text-center md:text-left relative left-6 ">
+
+      {/* Right Side - Text Content */}
+      <div className="w-full md:w-1/2 text-center md:text-left px-2 sm:px-6 md:px-0">
         <p className="text-orange-500 font-semibold text-sm mb-2">
           ✨ Why you choose Us?
         </p>
         <motion.h1
-          className="text-4xl md:text-5xl font-bold leading-tight mb-4 flex flex-wrap"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4 flex flex-wrap justify-center md:justify-start"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -79,26 +84,22 @@ export default function ChooseTax() {
             </motion.span>
           ))}
         </motion.h1>
-        <p className="text-gray-600 mb-6">
+        <p className="text-gray-600 mb-6 max-w-xl mx-auto md:mx-0 text-base sm:text-lg leading-relaxed">
           At TaxNTips, we are dedicated to helping individuals and businesses achieve financial success through expert tax strategies, business consulting, and financial planning solutions. Whether you're a startup looking for business formation guidance or an established company aiming to optimize tax savings and streamline operations, we provide tailored solutions, expert advice, and ongoing support to drive your success.
         </p>
-        <ul className="text-left space-y-3 mb-6">
-          <li className="flex items-center gap-2 font-bold">
-            <img src="/icon-check1.png" alt="icon2" />
-            Strategic Tax Planning
-          </li>
-          <li className="flex items-center gap-2 font-bold">
-            <img src="/icon-check1.png" alt="icon2" />
-            Reliable Expertise
-          </li>
-          <li className="flex items-center gap-2 font-bold">
-            <img src="/icon-check1.png" alt="icon2" />
-            Business Growth Support
-          </li>
+        <ul className="text-left max-w-xl mx-auto md:mx-0 space-y-3 mb-6">
+          {['Strategic Tax Planning', 'Reliable Expertise', 'Business Growth Support'].map((item, idx) => (
+            <li key={idx} className="flex items-center gap-3 font-bold">
+              <img src="/icon-check1.png" alt="Check icon" className="w-5 h-5 flex-shrink-0" />
+              {item}
+            </li>
+          ))}
         </ul>
-        <button className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-full font-semibold interactive shadow-md hover:scale-105 transition">
-          Learn More
-        </button>
+        <Link href={'/about'}>
+          <button className="bg-gradient-to-r from-orange-500 to-red-500 interactive cursor-pointer text-white px-6 py-3 rounded-full font-semibold shadow-md hover:scale-105 transition-transform duration-300">
+            Learn More
+          </button>
+        </Link>
       </div>
     </section>
   );

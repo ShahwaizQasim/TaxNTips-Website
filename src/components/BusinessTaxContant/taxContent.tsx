@@ -65,7 +65,7 @@ const BusinessTaxContent: React.FC = () => {
                             <section className="bg-white rounded-lg p-8 mb-8 ">
                                 <div className="flex flex-col gap-8 items-center ">
                                     <div>
-                                        <h1 className="text-5xl font-[700] text-black mb-6">
+                                        <h1 className="lg:text-5xl text-3xl font-[700] text-black mb-6">
                                             We'll help you uncover every possible deduction
                                         </h1>
                                         <div className="space-y-4 text-gray-600">
@@ -94,7 +94,7 @@ const BusinessTaxContent: React.FC = () => {
                                     </div>
                                     <div className='flex gap-8'>
 
-                                        <div className=" rounded-lg w-1/2">
+                                        <div className=" rounded-lg lg:w-1/2 lg:block hidden">
                                             <img src="/flip1.jpg" alt="" className='w-full h-full rounded-2xl hover:scale-105 transition-all duration-300' />
                                         </div>
                                         <div className="space-y-4">

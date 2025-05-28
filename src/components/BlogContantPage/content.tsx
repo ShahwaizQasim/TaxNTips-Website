@@ -1,107 +1,74 @@
-import React from 'react';
-import Link from 'next/link';
-import { CalendarDays, MessageCircleMore, Search, User } from 'lucide-react';
+import { Mail, MapPin, Phone } from "lucide-react";
 
-const posts = [
-    {
-        title: 'Why Bookkeeping is Essential for Small Business Success',
-        image: '/flip1.jpg',
-        date: '27 Feb/25',
-        comments: 'No Comments',
-        href: '/posts/bookkeeping-success'
-    },
-    {
-        title: 'The Importance of Business Tax Preparation for Small Business Owners',
-        image: '/flip2.jpg',
-        date: '27 Feb/25',
-        comments: 'No Comments',
-        href: '/posts/tax-preparation'
-    },
-    {
-        title: 'How Setting Up an S-Corp Can Benefit Your Business',
-        image: '/blog.jpg',
-        date: '27 Feb/25',
-        comments: 'No Comments',
-        href: '/posts/s-corp-benefits'
-    },
-];
-
-const categories = [
-    { name: 'Bookkeeping', count: 1 },
-    { name: 'S-Corp', count: 1 },
-    { name: 'Tax Preparation', count: 1 },
-];
-
-const BlogContentPage = () => {
+const ContactContent = () => {
     return (
-        <div className="container mx-auto px-22">
-            <div className="flex flex-col md:flex-row p-6 gap-8 px-44   ">
-                <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 ">
-                    {posts.map((post, idx) => (
-                        <div key={idx} className=" rounded overflow-hidden group hover interactive">
-                            <img src={post.image} alt={post.title} className="w-full h-48 relative -z-1 object-cover group-hover:scale-105 transition-all duration-300" />
-                            <div className="p-4">
-                                <Link href={post.href}>
-                                    <h3 className="font-semibold text-lg hover:underline cursor-none">{post.title}</h3>
-                                </Link>
-                                <div className="text-[12px] bg-orange-100 text-black px-2 py-2 flex justify-around rounded-3xl items-center gap-4 mt-2">
-                                    <span className='flex items-center gap-1'><span className='text-orange-500'><User size={14} /> </span> By</span>
-                                    <span className='flex items-center gap-1'><span className='text-orange-500'><MessageCircleMore size={14} /> </span>{post.comments}</span>
-                                    <span className='flex items-center gap-1'><span className='text-orange-500'><CalendarDays size={14} /> </span>{post.date}</span>
-                                </div>
+        <div className="p-4 sm:p-6 md:p-10 max-w-screen-xl h-fit mx-auto relative z-0 bottom-24">
+            <h3 className="text-orange-500 font-bold text-sm text-center mb-2">Contact Us</h3>
+            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold mb-8 text-center">
+                We are always available to help you
+            </h1>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+                {/* Contact Info Boxes */}
+                <div className="space-y-6 bg-orange-50 rounded-lg p-6 shadow">
+                    {[
+                        {
+                            icon: <Mail size={32} className="text-orange-300" />,
+                            title: "Email",
+                            content: "support@taxntips.com",
+                        },
+                        {
+                            icon: <Phone size={32} className="text-orange-300" />,
+                            title: "Phone Number",
+                            content: "+786 688 7861",
+                        },
+                        {
+                            icon: <MapPin size={32} className="text-orange-300" />,
+                            title: "Location",
+                            content: "7717 Louetta Rd, #11224 Spring, TX 77379",
+                        },
+                    ].map(({ icon, title, content }, i) => (
+                        <div key={i} className="bg-white rounded-lg p-6 shadow flex gap-4 items-center">
+                            <div>{icon}</div>
+                            <div>
+                                <div className="font-bold text-lg mb-1">{title}</div>
+                                <div className="text-gray-600">{content}</div>
                             </div>
                         </div>
                     ))}
                 </div>
 
-                <aside className="w-full md:w-[300px] space-y-8 bg-[#F7F7F7] px-6 py-6 rounded-lg">
-                    <div className='flex items-center'>
-                        <input
-                            type="text"
-                            placeholder="Search here..."
-                            className="w-full border-1 border-gray-400 text-sm rounded-l-2xl px-4 py-3"
-                        />
-                        <button className='bg-gradient-to-r  from-orange-300 to-orange-500 text-white rounded-r-3xl p-[14px] relative -left-2'>
-                            <Search size={20} />
-                        </button>
-                    </div>
-
-                    <div>
-                        <h4 className="font-semibold pb-1 mb-2"><span className='relative bottom-[6px] right-1 text-orange-400'>___</span>Categories</h4>
-                        {categories.map((cat, i) => (
-                            <div key={i} className="flex px-4 bg-white hover:scale-105 transition-all duration-300 justify-between py-4 rounded-3xl mt-4">
-                                <span className='text-sm'>{cat.name}</span>
-                                <span className="text-sm bg-orange-200 text-orange-500 rounded-full px-2">
-                                    {cat.count.toString().padStart(2, '0')}
-                                </span>
-                            </div>
-                        ))}
-                    </div>
-
-                    <div>
-                        <h4 className="font-semibold pb-1 mb-2"><span className='relative bottom-[6px] right-1 text-orange-400'>___</span>Recent Posts</h4>
-                        {posts.map((post, idx) => (
-                            <div key={idx} className="flex px-2 py-4 bg-white  items-start gap-2 mb-4">
-                                <img src={post.image} alt={post.title} className="w-16 h-16 object-cover rounded" />
-                                <div>
-                                    <Link href={post.href}>
-                                        <p className="text-[14px] font-bold hover:underline leading-snug">
-                                            {post.title}
-                                        </p>
-                                    </Link>
-                                    <div className="text-[10px] text-gray-500 bg-orange-100 px-1 py-2 rounded-3xl flex justify-between items-center gap-2">
-                                        <span className='flex items-center gap-1'><span className='text-orange-500'><User size={14} /></span>{post.date}</span>
-                                        <span className='flex items-center gap-1'><span className='text-orange-500'><MessageCircleMore size={14} /></span>{post.comments}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </aside>
+                {/* Contact Form */}
+                <form className="bg-[#F7F7F7] border border-gray-300 py-8 px-6 sm:px-8 rounded-lg shadow space-y-4">
+                    <input
+                        type="text"
+                        placeholder="Name"
+                        className="w-full p-4 bg-white rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
+                    />
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        className="w-full p-4 bg-white rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
+                    />
+                    <input
+                        type="tel"
+                        placeholder="Phone Number"
+                        className="w-full p-4 bg-white rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
+                    />
+                    <textarea
+                        placeholder="Your Message Here..."
+                        className="w-full h-32 px-4 py-3 bg-white rounded-2xl focus:outline-none focus:ring-2 focus:ring-orange-400 transition resize-none"
+                    />
+                    <button
+                        type="submit"
+                        className="w-full bg-gradient-to-r from-orange-300 to-orange-500 text-white font-semibold py-3 rounded-2xl hover:from-orange-400 hover:to-orange-600 transition"
+                    >
+                        Send
+                    </button>
+                </form>
             </div>
         </div>
-
     );
 };
 
-export default BlogContentPage;
+export default ContactContent;

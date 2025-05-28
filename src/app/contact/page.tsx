@@ -11,7 +11,9 @@ const ContactPage: NextPage<Props> = ({}) => {
     <Navbar2 />
     <ContactBannerSection />
     <ContactContent /> 
-    <Footer />
+    <div className='relative top-[150px]'>
+      <Footer />
+    </div>
   </div>
 }
 

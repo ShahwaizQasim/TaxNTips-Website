@@ -89,7 +89,7 @@ export default function HeroSection() {
 
     return (
         <section
-            className="relative bottom-[160px] px-6 sm:px-10 lg:px-20 bg-cover bg-no-repeat min-h-screen flex flex-col items-center justify-center py-22"
+            className="relative bottom-[20px] px-6 sm:px-10 lg:px-20 bg-cover bg-no-repeat min-h-screen flex flex-col items-center justify-center py-22"
             style={{
                 backgroundImage:
                     'url("/path-to-your-background-image.jpg")',

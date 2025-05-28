@@ -1,0 +1,27 @@
+swiper-button-prev,
+.swiper-button-next {
+  top: 50% !important;
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  margin-top: -1.25rem !important; /* vertically center */
+  color: #4b5563; /* gray-600 */
+  background: white;
+  border-radius: 9999px; /* fully rounded */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+  z-index: 10;
+}
+
+.swiper-button-prev {
+  left: -3rem !important; /* move left arrow outside container */
+}
+
+.swiper-button-next {
+  right: -3rem !important; /* move right arrow outside container */
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: #f3f4f6; /* gray-100 */
+  transform: scale(1.1);
+}

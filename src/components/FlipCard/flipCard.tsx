@@ -10,8 +10,8 @@ const FlipCard: React.FC<FlipCardProps> = ({ service }) => {
                 {/* Front */}
                 <div className="absolute inset-0 bg-transparent bg-opacity-80 border border-gray-700 rounded-xl p-8 flex flex-col justify-start backface-hidden">
                     <div className="mb-6">{service.icon}</div>
-                    <h3 className="text-2xl font-semibold text-white mb-4">{service.title}</h3>
-                    <p className="text-gray-300 text-lg leading-relaxed">{service.description}</p>
+                    <h3 className="lg:text-2xl md:text-2xl sm:text-xl font-semibold text-white mb-4">{service.title}</h3>
+                    <p className="text-gray-300 lg:text-lg md:text-sm leading-relaxed">{service.description}</p>
                 </div>
 
                 {/* Back */}

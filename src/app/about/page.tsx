@@ -25,7 +25,7 @@ const About: NextPage<Props> = ({ }) => {
           <img src="/about-img2_480.jpg" alt="Background Person" className="w-[60%] rounded-lg shadow-md z-10" />
           <img src="/about-img1_360.jpg" alt="Team" className="absolute right-0 top-65 w-[35%] rounded-lg shadow-lg z-20" />
           <div
-            className="absolute top-[9vw] right-[7vw] text-white font-semibold px-6 py-4 z-30"
+            className="absolute top-[9vw] right-[7vw] text-white font-semibold px-6 py-4 z-30 lg:block hidden"
             style={{
               background: 'linear-gradient(to right, #F97316, #FB923C)',
               clipPath: 'polygon(0 0, 70% 0, 100% 30%, 100% 100%, 0% 100%)',
@@ -35,7 +35,7 @@ const About: NextPage<Props> = ({ }) => {
             <div className="text-6xl font-extrabold">10</div>
             <div className="text-2xl leading-tight">Years of<br />Experiences</div>
           </div>
-          <div className="absolute -bottom-10 left-1/2 ml-14 transform -translate-x-1/2 bg-white p-4 rounded-lg shadow-md flex items-center gap-2 z-40">
+          <div className="absolute -bottom-10 left-1/2 ml-14 transform -translate-x-1/2 bg-white p-4 rounded-lg shadow-md flex items-center gap-2 z-40 lg:block hidden">
             <img src="/banner-3.jpg" alt="Client" className="w-24 h-24  object-cover" />
             <div className="ml-10 m-5">
               <div className="text-5xl font-bold">500+</div>
@@ -44,9 +44,9 @@ const About: NextPage<Props> = ({ }) => {
           </div>
         </div>
         {/* RIGHT COLUMN - Text */}
-        <div className="w-full md:w-[28%] space-y-6">
-          <p className="text-orange-500 font-medium">:small_orange_diamond: Welcome to Tax n Tips</p>
-          <h2 className="text-5xl font-extrabold leading-snug">Your Trusted Partner in Tax & Business Solutions</h2>
+        <div className="w-full md:w-[28%] space-y-6 lg:mt-0 mt-40">
+          <p className="text-orange-500 font-medium"> Welcome to Tax n Tips</p>
+          <h2 className="text-3xl lg:text-5xl font-extrabold leading-snug">Your Trusted Partner in Tax & Business Solutions</h2>
           <p className="text-gray-600 text-l leading-loose">
             At Tax N Tips, we believe that smart tax planning and strategic financial management are the cornerstones of financial success. Whether you’re an individual, a small business owner, or a corporation, our expert tax and business advisory services ensure that you maximize your savings, stay compliant with tax regulations, and build a strong financial future.
           </p>
@@ -107,7 +107,7 @@ const About: NextPage<Props> = ({ }) => {
           <img
             src="/curve-icon_360.png"
             alt="Curve"
-            className="absolute  right-[7vw] top-170 w-10 z-10"
+            className="absolute right-[7vw] lg:block hidden top-170 w-10 z-10"
           />
         </div>
       </div>
@@ -117,7 +117,7 @@ const About: NextPage<Props> = ({ }) => {
           <h4 className="text-lg font-bold text-black flex items-center justify-center gap-2">
             Expertise You Can Trust
           </h4>
-          <h2 className="text-5xl font-black text-gray-900 mt-3 leading-snug flex flex-wrap">
+          <h2 className="text-3xl lg:5xl font-black text-gray-900 mt-3 leading-snug flex flex-wrap">
             {words.map((word, index) => (
               <motion.span
                 key={index}
@@ -136,7 +136,7 @@ const About: NextPage<Props> = ({ }) => {
         <div className="flex flex-col md:flex-row items-start gap-12 max-w-7xl mx-auto">
           {/* Left Images + Icon Tag */}
           <div className="relative flex-1">
-            <div className="relative  md:w-auto ml-50 h-[400px]">
+            <div className="relative  md:w-auto lg:ml-50 ml-20 h-[400px]">
               {/* Meeting Image (Background) */}
               <img
                 src="/about-group-discussion-img.jpg"
@@ -151,7 +151,7 @@ const About: NextPage<Props> = ({ }) => {
               />
             </div>
             {/* Floating icon tag */}
-            <div className="absolute -top-4 left-70 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-bl-[30px] rounded-br-[30px] rounded-tl-[30px] rounded-tr-[30px] px-4 py-2 flex items-center gap-2 shadow-lg z-10">
+            <div className="absolute -top-4 left-70 lg:block hidden bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-bl-[30px] rounded-br-[30px] rounded-tl-[30px] rounded-tr-[30px] px-4 py-2 flex items-center gap-2 shadow-lg z-10">
               <div className="bg-white text-orange-600 rounded-full p-1">
                 <BarChart3 size={44} />
               </div>
@@ -213,21 +213,22 @@ const About: NextPage<Props> = ({ }) => {
         </div>
       </section>
       <section
-        className="bg-cover mt-15 bg-center h-[20vh] flex items-center justify-center"
+        className="bg-cover mt-15 bg-center flex items-center lg:justify-center justify-start px-4 py-12 sm:px-6 md:px-8"
         style={{ backgroundImage: "url('/about-black-banner.jpg')" }}
       >
-        <div className="max-w-7xl mx-auto px-4 flex flex-wrap justify-center items-center gap-10 text-white text-center">
+        <div className="max-w-7xl mx-auto flex flex-wrap justify-center items-center gap-6 sm:gap-8 md:gap-10 text-white text-center">
           {/* Item 1 */}
-          <div>
+          <div className="w-1/2 sm:w-auto">
             <div className="relative inline-block">
-              <span className="absolute -top-3 -left-3 bg-gradient-to-r from-orange-600 to-orange-400 rounded-full w-14 h-14 z-0"></span>
-              <span className="text-7xl font-extrabold relative z-10">1000+</span>
+              <span className="absolute -top-3 -left-3 bg-gradient-to-r from-orange-600 to-orange-400 rounded-full w-10 h-10 sm:w-14 sm:h-14 z-0"></span>
+              <span className="text-4xl sm:text-7xl font-extrabold relative z-10">1000+</span>
             </div>
-            <p className="text-sm mt-1 relative z-10">PROJECT COMPLETE</p>
+            <p className="text-xs sm:text-sm mt-1 relative z-10">PROJECT COMPLETE</p>
           </div>
+
           {/* Separator */}
           <span
-            className="text-2xl font-bold inline-block"
+            className="text-xl sm:text-2xl font-bold inline-block"
             style={{
               animation: 'spin 3s linear infinite',
               display: 'inline-block',
@@ -235,17 +236,19 @@ const About: NextPage<Props> = ({ }) => {
           >
             ✻
           </span>
+
           {/* Item 2 */}
-          <div>
+          <div className="w-1/2 sm:w-auto">
             <div className="relative inline-block">
-              <span className="absolute -top-3 -left-3 bg-gradient-to-r from-orange-600 to-orange-400 rounded-full w-14 h-14 z-0"></span>
-              <span className="text-7xl font-extrabold relative z-10">500+</span>
+              <span className="absolute -top-3 -left-3 bg-gradient-to-r from-orange-600 to-orange-400 rounded-full w-10 h-10 sm:w-14 sm:h-14 z-0"></span>
+              <span className="text-4xl sm:text-7xl font-extrabold relative z-10">500+</span>
             </div>
-            <p className="text-sm mt-1 relative z-10">CLIENTS SATISFACTIONS</p>
+            <p className="text-xs sm:text-sm mt-1 relative z-10">CLIENTS SATISFACTIONS</p>
           </div>
+
           {/* Separator */}
           <span
-            className="text-2xl font-bold inline-block"
+            className="text-xl sm:text-2xl font-bold inline-block"
             style={{
               animation: 'spin 3s linear infinite',
               display: 'inline-block',
@@ -253,17 +256,19 @@ const About: NextPage<Props> = ({ }) => {
           >
             ✻
           </span>
+
           {/* Item 3 */}
-          <div>
+          <div className="w-1/2 sm:w-auto">
             <div className="relative inline-block">
-              <span className="absolute -top-3 -left-3 bg-gradient-to-r from-orange-600 to-orange-400 rounded-full w-14 h-14 z-0"></span>
-              <span className="text-7xl font-extrabold relative z-10">10+</span>
+              <span className="absolute -top-3 -left-3 bg-gradient-to-r from-orange-600 to-orange-400 rounded-full w-10 h-10 sm:w-14 sm:h-14 z-0"></span>
+              <span className="text-4xl sm:text-7xl font-extrabold relative z-10">10+</span>
             </div>
-            <p className="text-sm mt-1 relative z-10">AWARDS</p>
+            <p className="text-xs sm:text-sm mt-1 relative z-10">AWARDS</p>
           </div>
+
           {/* Separator */}
           <span
-            className="text-2xl font-bold inline-block"
+            className="text-xl sm:text-2xl font-bold inline-block"
             style={{
               animation: 'spin 3s linear infinite',
               display: 'inline-block',
@@ -271,16 +276,28 @@ const About: NextPage<Props> = ({ }) => {
           >
             ✻
           </span>
+
           {/* Item 4 */}
-          <div>
+          <div className="w-1/2 sm:w-auto">
             <div className="relative inline-block">
-              <span className="absolute -top-3 -left-3 bg-gradient-to-r from-orange-600 to-orange-400 rounded-full w-14 h-14 z-0"></span>
-              <span className="text-7xl font-extrabold relative z-10">15+</span>
+              <span className="absolute -top-3 -left-3 bg-gradient-to-r from-orange-600 to-orange-400 rounded-full w-10 h-10 sm:w-14 sm:h-14 z-0"></span>
+              <span className="text-4xl sm:text-7xl font-extrabold relative z-10">15+</span>
             </div>
-            <p className="text-sm mt-1 relative z-10">TEAM MEMBERS</p>
+            <p className="text-xs sm:text-sm mt-1 relative z-10">TEAM MEMBERS</p>
           </div>
+          <span
+            className="text-xl sm:text-2xl font-bold inline-block"
+            style={{
+              animation: 'spin 3s linear infinite',
+              display: 'inline-block',
+            }}
+          >
+            ✻
+          </span>
         </div>
+
       </section>
+
 
       <section className='mt-12'>
         <Footer />
