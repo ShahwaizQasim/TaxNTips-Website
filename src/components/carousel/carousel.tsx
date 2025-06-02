@@ -99,26 +99,22 @@ export default function Carousel() {
     <div className="w-full max-w-full">
       <Slider {...settings}>
         <div
-          className="w-full h-[800px] lg:h-[800px] md:h-[600px] sm:h-[400px] h-[300px] flex items-center justify-center relative z-10 bg-Image"
-          style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}
+          className="w-full h-[800px] lg:h-[800px] md:h-[600px] sm:h-[400px] h-[300px] flex items-center justify-center relative z-10 bg-Image Mobile-bg-Image"
         >
           {/* Add content if needed */}
         </div>
         <div
-          className="w-full h-[800px] lg:h-[800px] md:h-[600px] sm:h-[400px] h-[300px] flex items-center justify-center bg-green-400 bg-Image1"
-          style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}
+          className="w-full h-[800px] lg:h-[800px] md:h-[600px] sm:h-[400px] h-[300px] flex items-center justify-center bg-green-400 bg-Image1 Mobile-bg-Image1"
         >
           {/* Add content if needed */}
         </div>
         <div
-          className="w-full h-[800px] lg:h-[800px] md:h-[600px] sm:h-[400px] h-[300px] flex items-center justify-center bg-blue-400 bg-Image2"
-          style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}
+          className="w-full h-[800px] lg:h-[800px] md:h-[600px] sm:h-[400px] h-[300px] flex items-center justify-center bg-blue-400 bg-Image2 Mobile-bg-Image2"
         >
           {/* Add content if needed */}
         </div>
         <div
-          className="w-full h-[800px] lg:h-[800px] md:h-[600px] sm:h-[400px] h-[300px] flex items-center justify-center bg-blue-400 bg-Image3"
-          style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}
+          className="w-full h-[800px] lg:h-[800px] md:h-[600px] sm:h-[400px] h-[300px] flex items-center justify-center bg-blue-400 bg-Image3 Mobile-bg-Image3"
         >
           {/* Add content if needed */}
         </div>

@@ -1,5 +1,5 @@
 import BlogBannerSection from '@/components/BlogBannerSection/blogBanner'
-import BlogContentPage from '@/components/BlogContantPage/content'
+import BlogContentPage from '@/components/BlogContentPage/blogContent'
 import Footer from '@/components/footer/footer'
 import Navbar2 from '@/components/navbar2/navbar2'
 import { NextPage } from 'next'

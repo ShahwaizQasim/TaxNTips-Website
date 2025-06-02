@@ -38,7 +38,7 @@ const QuoteSection: React.FC = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
                     {/* Right Content - Image */}
                     <div className="relative w-full">
-                        <div className="relative w-full h-64 sm:h-96 lg:h-[600px] rounded-3xl overflow-hidden">
+                        <div className="relative w-full h-96 sm:h-96 lg:h-[600px] rounded-3xl overflow-hidden">
                             {/* Image wrapper */}
                             <motion.div
                                 className="absolute inset-0 left-0 sm:left-14 flex items-center justify-center"

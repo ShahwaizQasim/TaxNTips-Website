@@ -2,14 +2,13 @@ import BusinessTaxContent from '@/components/BusinessTaxContant/taxContent'
 import Footer from '@/components/footer/footer'
 import Navbar2 from '@/components/navbar2/navbar2'
 import { NextPage } from 'next'
-import { Facebook, Linkedin, Instagram, SettingsIcon } from "lucide-react";
+import { Facebook, Linkedin, Instagram, SettingsIcon, MapPin } from "lucide-react";
 import Link from "next/link";
 import { Search, Phone, Mail, CheckCircle, ArrowRight } from 'lucide-react';
 
 interface ServiceItem {
     id: string;
     title: string;
-    icon: JSX.Element;
 }
 
 interface RelatedService {
@@ -23,32 +22,26 @@ const services: ServiceItem[] = [
     {
         id: '1',
         title: 'Customized Tax Solutions',
-        icon: <CheckCircle className="w-5 h-5 text-green-600" />
     },
     {
         id: '2',
         title: 'Year-Round Tax Support',
-        icon: <CheckCircle className="w-5 h-5 text-green-600" />
     },
     {
         id: '3',
         title: 'Hassle-Free Filing',
-        icon: <CheckCircle className="w-5 h-5 text-green-600" />
     },
     {
         id: '4',
         title: 'Audit Assistance & Compliance',
-        icon: <CheckCircle className="w-5 h-5 text-green-600" />
     },
     {
         id: '5',
         title: 'Sales Tax Reporting and Filing',
-        icon: <CheckCircle className="w-5 h-5 text-green-600" />
     },
     {
         id: '6',
         title: 'Financial Statement Preparation',
-        icon: <CheckCircle className="w-5 h-5 text-green-600" />
     }
 ];
 
@@ -65,67 +58,71 @@ const BusinessTax: NextPage<Props> = ({ }) => {
     return <div>
         <Navbar2 />
         <div>
-        {/* Banner Section */}
-        <div className="relative bottom-[136px] py-32 pb-[400px]" style={{
-          backgroundImage: "url('/bg-page-title1.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
-          
-        }}>
+            {/* Banner Section */}
+            <div className="relative bottom-[136px] py-32 pb-[400px]" style={{
+                backgroundImage: "url('/bg-page-title1.jpg')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundAttachment: "fixed",
 
-          {/* Overlay Content */}
-          <div className="about-banner-content absolute inset-0 flex flex-col justify-start text-white p-6 ">
-            {/* Top contact + icons */}
-            {/* <div className="lg:flex justify-between py-[1vw] px-[10vw] relative lg:block hidden">
-              <div className="flex">
-                <h1 className="mr-4 ">
-                  PO Box 11224 Spring, TX, United States, Texas 77379
-                </h1>
-                <h1>+786 688 7861</h1>
-              </div>
-              <div className="flex space-x-4">
-                <a
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Facebook size={22} />
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Linkedin size={22} />
-                </a>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Instagram size={22} />
-                </a>
-              </div>
-            </div> */}
-          <div className=" absolute top-64 lg:left-80 left-20  ">
-            <h1 className="text-5xl font-bold">S-Corp Set-up</h1>
-            <div className="py-4 mt-4 rounded-[30px] flex gap-3 justify-center items-center border-1 border-orange-400 bg-[#34393D]">
-                <Link href={'/'} className="cursor-none interactive">
-                <h1>Home</h1>
-                </Link>
-                <SettingsIcon className="text-orange-400" />
-                <Link href={'/service/s-corp'} className="cursor-none interactive">
-                <h1> S-Corp Set-up</h1>
-                </Link>
+            }}>
+
+                {/* Overlay Content */}
+                <div className="about-banner-content absolute inset-0 flex flex-col justify-start text-white p-6 ">
+                    {/* Top contact + icons */}
+                    <div className="lg:flex justify-between py-[1vw] px-[10vw] relative lg:block hidden py-4 mb-4">
+                        <div className="flex gap-10">
+                            <h1 className="mr-4 flex gap-2">
+                                <MapPin style={{ color: '#ED6F20' }} />
+                                PO Box 11224 Spring, TX, United States, Texas 77379
+                            </h1>
+                            <h1 className="flex gap-2">
+                                <Phone style={{ color: '#ED6F20' }} />
+                                +786 688 7861
+                            </h1>
+                        </div>
+                        <div className="flex space-x-4">
+                            <a
+                                href="https://facebook.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <Facebook size={22} />
+                            </a>
+                            <a
+                                href="https://linkedin.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <Linkedin size={22} />
+                            </a>
+                            <a
+                                href="https://instagram.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <Instagram size={22} />
+                            </a>
+                        </div>
+                    </div>
+                    <div className=" absolute top-64 lg:left-80 left-20  ">
+                        <h1 className="text-5xl font-bold">S-Corp Set-up</h1>
+                        <div className="py-4 mt-4 rounded-[30px] flex gap-3 justify-center items-center border-1 border-orange-400 bg-[#34393D]">
+                            <Link href={'/'} className="cursor-none interactive">
+                                <h1>Home</h1>
+                            </Link>
+                            <SettingsIcon className="text-orange-400" />
+                            <Link href={'/service/s-corp'} className="cursor-none interactive">
+                                <h1> S-Corp Set-up</h1>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-          </div>
-          </div>
-
         </div>
-      </div>
-      <div className="h-2 bg-gradient-to-r from-orange-300 to-orange-500 w-[100%] rounded-b-2xl mx-auto relative bottom-[136px] " />
+        <div className="h-2 bg-gradient-to-r from-orange-300 to-orange-500 w-[100%] rounded-b-2xl mx-auto relative bottom-[136px] " />
         <div className="h-2 bg-gradient-to-r from-orange-300 to-orange-500 w-[100%] rounded-b-2xl mx-auto relative bottom-[136px] " ></div>
         <div className="min-h-screen relative bottom-[130px]">
             <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -171,7 +168,7 @@ const BusinessTax: NextPage<Props> = ({ }) => {
                                     <div className="space-y-4">
                                         {services.map((service) => (
                                             <div key={service.id} className="flex items-center space-x-3">
-                                                {service.icon}
+                                                <CheckCircle className="w-5 h-5 text-green-600" />
                                                 <span className="text-gray-700">{service.title}</span>
                                             </div>
                                         ))}

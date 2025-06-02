@@ -37,7 +37,7 @@ const BlogCard = ({ category, date, title, image, slug }: BlogCardProps) => (
         </h3>
 
         {/* Read More link */}
-        <Link href={slug} className="text-sm font-semibold text-gray-500 flex items-center gap-1 hover:text-orange-500 text-left">
+        <Link href={`${slug}`} className="text-sm font-semibold text-gray-500 flex items-center gap-1 hover:text-orange-500 text-left">
           Read More <ArrowRight className="w-4 h-4" />
         </Link>
       </div>

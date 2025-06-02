@@ -1,10 +1,10 @@
 import { NextPage } from "next";
-import { Facebook, Linkedin, Instagram, SettingsIcon } from "lucide-react";
+import { Facebook, Linkedin, Instagram, SettingsIcon, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 
-interface Props {}
+interface Props { }
 
-const BannerSection: NextPage<Props> = ({}) => {
+const BannerSection: NextPage<Props> = ({ }) => {
   return (
     <>
       <div>
@@ -15,18 +15,22 @@ const BannerSection: NextPage<Props> = ({}) => {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundAttachment: "fixed",
-          
+
         }}>
 
           {/* Overlay Content */}
           <div className="about-banner-content absolute inset-0 flex flex-col justify-start text-white p-6 ">
             {/* Top contact + icons */}
-            {/* <div className="lg:flex justify-between py-[1vw] px-[10vw] relative lg:block hidden">
-              <div className="flex">
-                <h1 className="mr-4 ">
+            <div className="lg:flex justify-between py-[1vw] px-[10vw] relative lg:block hidden py-4 mb-4">
+              <div className="flex gap-10">
+                <h1 className="mr-4 flex gap-2">
+                  <MapPin style={{ color: '#ED6F20' }} />
                   PO Box 11224 Spring, TX, United States, Texas 77379
                 </h1>
-                <h1>+786 688 7861</h1>
+                <h1 className="flex gap-2">
+                  <Phone style={{ color: '#ED6F20' }} />
+                  +786 688 7861
+                </h1>
               </div>
               <div className="flex space-x-4">
                 <a
@@ -51,19 +55,19 @@ const BannerSection: NextPage<Props> = ({}) => {
                   <Instagram size={22} />
                 </a>
               </div>
-            </div> */}
-          <div className=" absolute top-64 lg:left-80 left-20  ">
-            <h1 className="text-5xl font-bold">Business Tax Preparation</h1>
-            <div className="py-4 mt-4 rounded-[30px] flex gap-3 justify-center items-center border-1 border-orange-400 bg-[#34393D]">
+            </div>
+            <div className=" absolute top-64 lg:left-80 left-20  ">
+              <h1 className="text-5xl font-bold">Business Tax Preparation</h1>
+              <div className="py-4 mt-4 rounded-[30px] flex gap-3 justify-center items-center border-1 border-orange-400 bg-[#34393D]">
                 <Link href={'/'} className="cursor-none interactive">
-                <h1>Home</h1>
+                  <h1>Home</h1>
                 </Link>
                 <SettingsIcon className="text-orange-400" />
                 <Link href={'/service/business-tax'} className="cursor-none interactive">
-                <h1>Business Tax Preparation</h1>
+                  <h1>Business Tax Preparation</h1>
                 </Link>
+              </div>
             </div>
-          </div>
           </div>
 
         </div>

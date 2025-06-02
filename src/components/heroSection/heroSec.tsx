@@ -13,6 +13,7 @@ interface ServiceCard {
     description: string;
     backContent: string;
     backgroundImage: string;
+    link: string
 }
 
 const services: ServiceCard[] = [
@@ -25,6 +26,7 @@ const services: ServiceCard[] = [
         backContent:
             "Professional bookkeeping services including financial record management, expense tracking, accounts payable/receivable, and monthly financial reports to keep your business organized and compliant.",
         backgroundImage: '/flip1.jpg',
+        link: '/service/bookkeeping'
     },
     {
         id: 2,
@@ -35,6 +37,8 @@ const services: ServiceCard[] = [
         backContent:
             "Complete business tax preparation services covering corporate taxes, partnership returns, LLC filings, and quarterly tax planning to maximize deductions and minimize liabilities.",
         backgroundImage: '/flip2.jpg',
+        link: '/service/business-tax'
+
     },
     {
         id: 3,
@@ -45,6 +49,8 @@ const services: ServiceCard[] = [
         backContent:
             "Strategic tax planning services including retirement planning, investment strategies, tax-loss harvesting, and year-round consultation to optimize your tax position.",
         backgroundImage: '/flip3.jpg',
+        link: '/service/tax-strategy'
+
     },
     {
         id: 4,
@@ -55,6 +61,9 @@ const services: ServiceCard[] = [
         backContent:
             "Complete S-Corporation setup including articles of incorporation, bylaws preparation, EIN application, tax election filing, and ongoing compliance support.",
         backgroundImage: '/flip4.webp',
+        link: '/service/s-corp'
+
+
     },
     {
         id: 5,
@@ -65,6 +74,8 @@ const services: ServiceCard[] = [
         backContent:
             "Full business entity formation services including LLC registration, operating agreements, business licenses, bank account setup, and initial compliance requirements.",
         backgroundImage: '/flip5.jpg',
+        link: '/service/bookkeeping'
+
     },
 ];
 
@@ -113,7 +124,7 @@ export default function HeroSection() {
                         </h3>
                     </div>
                     <motion.h1
-                        className="text-4xl md:text-5xl font-extrabold text-white leading-tight flex flex-wrap justify-center"
+                        className="lg:text-5xl text-3xl md:text-5xl font-extrabold text-white leading-tight flex flex-wrap justify-center"
                         variants={containerVariants}
                         initial="hidden"
                         whileInView="visible"

@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 interface FlipCardProps {
     service: any;
@@ -19,7 +20,10 @@ const FlipCard: React.FC<FlipCardProps> = ({ service }) => {
                     style={{ backgroundImage: `url(${service.backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}
                 >
                     <div className="flex justify-center items-center">
-                        <button className=" interactive  bg-gradient-to-r  from-orange-300 to-orange-500 cursor-none hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold text-lg transition-colors duration-200 shadow-lg hover:shadow-xl  ">Read More</button>
+                        <Link href={service.link}>
+                        <button className=" interactive cursor-pointer bg-gradient-to-r  from-orange-300 to-orange-500 cursor-none hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold text-lg transition-colors duration-200 shadow-lg hover:shadow-xl  ">Read More</button>
+                        </Link>
+
                     </div>
                 </div>
             </div>

@@ -8,7 +8,7 @@ interface ValueCardProps {
 
 const ValueCard: React.FC<ValueCardProps> = ({ icon, title, description }) => {
     return (
-        <div className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden min-h-48">
+        <div className="group relative bg-white rounded-2xl p-6 shadow-lg pb-6 hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden min-h-48">
             {/* Default State */}
             <div className="relative z-10 transition-all duration-300 group-hover:opacity-0">
                 <div className="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center mb-6">

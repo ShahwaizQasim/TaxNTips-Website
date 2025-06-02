@@ -4,7 +4,6 @@ import { Search, Phone, Mail, CheckCircle, ArrowRight } from 'lucide-react';
 interface ServiceItem {
     id: string;
     title: string;
-    icon: JSX.Element;
 }
 
 interface RelatedService {
@@ -17,32 +16,26 @@ const BusinessTaxContent: React.FC = () => {
         {
             id: '1',
             title: 'Customized Tax Solutions',
-            icon: <CheckCircle className="w-5 h-5 text-green-600" />
         },
         {
             id: '2',
             title: 'Year-Round Tax Support',
-            icon: <CheckCircle className="w-5 h-5 text-green-600" />
         },
         {
             id: '3',
             title: 'Hassle-Free Filing',
-            icon: <CheckCircle className="w-5 h-5 text-green-600" />
         },
         {
             id: '4',
             title: 'Audit Assistance & Compliance',
-            icon: <CheckCircle className="w-5 h-5 text-green-600" />
         },
         {
             id: '5',
             title: 'Sales Tax Reporting and Filing',
-            icon: <CheckCircle className="w-5 h-5 text-green-600" />
         },
         {
             id: '6',
             title: 'Financial Statement Preparation',
-            icon: <CheckCircle className="w-5 h-5 text-green-600" />
         }
     ];
 
@@ -100,7 +93,7 @@ const BusinessTaxContent: React.FC = () => {
                                         <div className="space-y-4">
                                             {services.map((service) => (
                                                 <div key={service.id} className="flex items-center space-x-3">
-                                                    {service.icon}
+                                                    <CheckCircle className="w-5 h-5 text-green-600" />
                                                     <span className="text-gray-700">{service.title}</span>
                                                 </div>
                                             ))}
