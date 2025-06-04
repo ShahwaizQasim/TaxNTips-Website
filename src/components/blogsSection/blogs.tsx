@@ -12,6 +12,7 @@ type BlogCardProps = {
     updated_at: string;
     image: string;
     slug: string;
+    description?: string;
 };
 
 const BlogSection = () => {
@@ -52,6 +53,7 @@ const BlogSection = () => {
                             post_by={post.post_by || 'Admin'}
                             updated_at={post.updated_at || post.date || '2025-01-01'}
                             slug={post.slug || '#'}
+                            description={post.description || ''}
                         />
                     ))}
                 </div>

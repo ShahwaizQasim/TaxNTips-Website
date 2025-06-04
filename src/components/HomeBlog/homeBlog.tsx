@@ -38,7 +38,7 @@ const HomeBlog = () => {
     }, []);
 
     return (
-        <section className="py-12 bg-white">
+        <section className="py-12 bg-white relative bottom-40">
             <div className="text-center mb-10">
                 <p className="text-orange-500 font-bold">Our blog</p>
                 <h2 className="text-3xl font-bold mt-2">Learn more from blog</h2>

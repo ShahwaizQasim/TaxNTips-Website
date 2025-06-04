@@ -4,21 +4,21 @@ import { User, MessageCircle } from 'lucide-react';
 
 interface BlogCardProps {
     imageSrc: string;
-    title: string;
     updated_at: string;
+    description?: string;
 }
 
-const BlogCard: FC<BlogCardProps> = ({ imageSrc, title, updated_at }: BlogCardProps) => {
+const BlogCard: FC<BlogCardProps> = ({ imageSrc, updated_at, description }: BlogCardProps) => {
     return (
         <div className="bg-white rounded-xl shadow p-4 pr-2 flex gap-4 items-start w-[100%]">
             <img
                 src={imageSrc}
-                alt={title}
+                alt={imageSrc}
                 className="w-16 h-16 rounded-md object-cover"
             />
             <div className="flex-1">
                 <h2 className="font-semibold text-sm text-wrap text-gray-900 leading-snug">
-                    {title}
+                    {description}
                 </h2>
                 <div className="mt-3 flex items-center gap-6 text-sm text-gray-600 bg-[#fff2ef] px-4 py-2 rounded-full w-max">
                     <span className="flex items-center gap-1 text-[10px]">

@@ -7,7 +7,6 @@ import AwardsCarousel from "@/components/AwardsCarousel/awardcards";
 import AccountingFeatures from "@/components/smartAccounting/accounting";
 import ChooseTax from "@/components/chooseTax/chooseTax";
 import Footer from "@/components/footer/footer";
-import BlogSection from "@/components/blogsSection/blogs";
 import TestimonialSection from "@/components/Testimonial/testimonial";
 import HomeBlog from "@/components/HomeBlog/homeBlog";
 
@@ -21,12 +20,14 @@ export default function Home() {
       <TaxPartnerSection />
       <AwardsCarousel />
       <div className="mt-24">
-      <AccountingFeatures />
+        <AccountingFeatures />
       </div>
       <ChooseTax />
       <HomeBlog />
       <TestimonialSection />
-      <Footer />
+      <div className="relative z-50">
+        <Footer />
+      </div>
     </>
   );
 }

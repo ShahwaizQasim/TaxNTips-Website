@@ -61,7 +61,7 @@ const TaxPartnerSection: React.FC = () => {
   
 
   return (
-    <div className="min-h-screen bg-[#FFFFFF] py-16 pb-8 md:pb-16 lg:pb-[130px] h-fit">
+    <div className="bg-[#FFFFFF] py-16 pb-8 md:pb-16 lg:pb-[130px] h-fit">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="flex items-center gap-2 mb-8">

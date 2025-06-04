@@ -48,8 +48,7 @@ export default function TestimonialSection() {
   const active = testimonials[activeIndex];
 
   return (
-    <section className="py-16 sm:py-24 bg-white px-4 sm:px-6 md:px-12 lg:px-24">
-
+    <section className="py-16 sm:py-24 bg-white px-4 sm:px-6 md:px-12 lg:px-24 relative bottom-35">
        <section
         className="bg-cover mt-15 mb-14 bg-center flex items-center lg:justify-center justify-start px-4 py-12 sm:px-6 md:px-8"
       >
@@ -179,7 +178,7 @@ export default function TestimonialSection() {
         </div>
 
         {/* Large avatar */}
-        <div className="flex justify-center order-1 md:order-2 relative right-32">
+        <div className="flex justify-center order-1 md:order-2 relative lg:right-32">
           <div className="lg:w-98 lg:h-98 h-64 w-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full shadow-lg">
             <img
               src={active.mainImage}
@@ -190,7 +189,7 @@ export default function TestimonialSection() {
         </div>
 
         {/* Text content */}
-        <div className="text-left space-y-4 px-4 sm:px-6 order-3 md:order-3 max-w-xl mx-auto md:mx-0 relative right-30">
+        <div className="text-left space-y-4 px-4 sm:px-6 order-3 md:order-3 max-w-xl mx-auto md:mx-0 relative lg:right-30">
           <div className="text-sm text-orange-500 italic">★ Our Feedback</div>
           <h2 className="text-3xl sm:text-4xl font-extrabold leading-tight">
             What People Say

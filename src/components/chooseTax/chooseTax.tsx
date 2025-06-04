@@ -31,10 +31,10 @@ export default function ChooseTax() {
 
   return (
     <section
-      className="w-full px-4 sm:px-8 md:px-16 lg:px-24 flex flex-col-reverse md:flex-row items-center justify-between relative overflow-hidden py-20 md:py-32 lg:py-48"
+      className="w-full border-2 border-red-500 pb-220 px-4 sm:px-8 md:px-16 lg:px-24 lg:py-32 lg:pb-46 pb-40 flex flex-col-reverse md:flex-row items-center justify-between relative overflow-hidden py-20 md:py-32"
       style={{
         backgroundImage: 'url("/h2-bg-section4.jpg")',
-        backgroundSize: 'cover',
+        backgroundSize: 'contain',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
       }}
@@ -65,12 +65,12 @@ export default function ChooseTax() {
 
 
       {/* Right Side - Text Content */}
-      <div className="w-full md:w-1/2 text-center md:text-left px-2 sm:px-6 md:px-0 relative left-10">
+      <div className="w-full md:w-1/2 text-center md:text-left px-2 sm:px-6 md:px-0 relative left-10 bottom-14">
         <p className="text-orange-500 font-semibold text-sm mb-2 italic">
           ✨ Why you choose Us?
         </p>
         <motion.h1
-          className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4 flex flex-wrap justify-center md:justify-start pr-48" 
+          className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4 flex flex-wrap justify-center md:justify-start lg:pr-48 pr-12" 
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -85,7 +85,7 @@ export default function ChooseTax() {
             </motion.span>
           ))}
         </motion.h1>
-        <p className="text-gray-500 mb-6 max-w-xl mx-auto md:mx-0 text-base sm:text-lg leading-relaxed pr-36">
+        <p className="text-gray-500 mb-6 max-w-xl mx-auto md:mx-0 text-base sm:text-lg leading-relaxed lg:pr-36 pr-12">
           At TaxNTips, we are dedicated to helping individuals and businesses achieve financial success through expert tax strategies, business consulting, and financial planning solutions. Whether you're a startup looking for business formation guidance or an established company aiming to optimize tax savings and streamline operations, we provide tailored solutions, expert advice, and ongoing support to drive your success.
         </p>
         <ul className="text-left max-w-xl mx-auto md:mx-0 space-y-3 mb-6">

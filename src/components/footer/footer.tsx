@@ -1,8 +1,5 @@
 import Link from 'next/link';
 import {
-  Phone,
-  Mail,
-  MapPin,
   Facebook,
   Instagram,
   Linkedin
@@ -10,7 +7,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0D0D0D] text-white py-16 px-6 md:px-20">
+    <footer className="bg-[#0D0D0D] text-white py-16 px-6 md:px-20 w-full">
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 pt-10 border-b border-t border-gray-700 pb-10">
         {/* Logo and description */}
         <div>

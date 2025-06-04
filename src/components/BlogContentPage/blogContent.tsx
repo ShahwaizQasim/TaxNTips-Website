@@ -22,6 +22,7 @@ type BlogCardProps = {
     category?: string;
     slug?: string;
     date?: string;
+    description?: string;
 };
 
 const relatedServices: RelatedService[] = [
@@ -33,6 +34,7 @@ const relatedServices: RelatedService[] = [
 const BlogContentPage: NextPage<Props> = ({}) => {
 
     const [blogs, setBlogs] = useState<BlogCardProps[]>([]);
+    const [recentBlogs, setRecentBlogs] = useState<BlogCardProps[]>([]);
     console.log(blogs, "blogs");
 
     const fetchBlogs = async () => {
@@ -40,6 +42,7 @@ const BlogContentPage: NextPage<Props> = ({}) => {
             try {
                 const response = await axios.post('https://taxban-2a33cb313426.herokuapp.com/blog/getBlogs');
                 setBlogs(response.data.data);
+                setRecentBlogs(response.data.data.slice(0, 3));
             } catch (err) {
                 console.error("Error fetching blogs:", err);
             }
@@ -64,7 +67,7 @@ const BlogContentPage: NextPage<Props> = ({}) => {
                     </div>
 
                     {/* Sidebar */}
-                    <div className="lg:col-span-1 rounded-lg mt-[100px] sticky top-0 bg-[#F7F7F7]">
+                    <div className="lg:col-span-1 rounded-lg mt-[100px] lg:sticky lg:top-10 bg-[#F7F7F7]">
                         {/* Search Section */}
                         <div className="p-6 mb-6 ">
                             <h3 className="text-2xl font-semibold text-black mb-4"><span className='relative bottom-[9px] right-2 text-orange-400'>__</span>Search</h3>
@@ -112,10 +115,11 @@ const BlogContentPage: NextPage<Props> = ({}) => {
                         <div className=" rounded-lg p-6 mb-6 relative bottom-[30px]">
                             <h3 className="text-2xl font-semibold text-black mb-4"><span className='relative bottom-[9px] right-2 text-orange-400'>__</span>Recent Posts</h3>
                             <div className="space-y-3">
-                                {blogs.map((cat, i) => (
-                                    <BlogCard key={i} title={cat.title}
+                                {recentBlogs.map((cat, i) => (
+                                    <BlogCard key={i} description={cat.description || ''}
                                         imageSrc={cat.image || '/default.jpg'}
-                                        updated_at={cat.date || '2025-01-01'} />
+                                        updated_at={cat.date || '2025-01-01'}
+                                        />
                                 ))}
                             </div>
                         </div>
