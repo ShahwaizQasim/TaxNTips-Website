@@ -117,7 +117,7 @@ const About: NextPage<Props> = ({ }) => {
           <h4 className="text-lg font-bold text-black flex items-center justify-center gap-2">
             Expertise You Can Trust
           </h4>
-          <h2 className="text-3xl lg:5xl font-black text-gray-900 mt-3 leading-snug flex flex-wrap">
+          <h2 className="text-3xl lg:6xl font-black text-gray-900 mt-3 leading-snug flex justify-center flex-wrap">
             {words.map((word, index) => (
               <motion.span
                 key={index}
@@ -221,7 +221,7 @@ const About: NextPage<Props> = ({ }) => {
           <div className="w-1/2 sm:w-auto">
             <div className="relative inline-block">
               <span className="absolute -top-3 -left-3 bg-gradient-to-r from-orange-600 to-orange-400 rounded-full w-10 h-10 sm:w-14 sm:h-14 z-0"></span>
-              <span className="text-4xl sm:text-7xl font-extrabold relative z-10">1000+</span>
+              <span className="text-3xl sm:text-7xl font-extrabold relative z-10">1000+</span>
             </div>
             <p className="text-xs sm:text-sm mt-1 relative z-10">PROJECT COMPLETE</p>
           </div>
@@ -241,7 +241,7 @@ const About: NextPage<Props> = ({ }) => {
           <div className="w-1/2 sm:w-auto">
             <div className="relative inline-block">
               <span className="absolute -top-3 -left-3 bg-gradient-to-r from-orange-600 to-orange-400 rounded-full w-10 h-10 sm:w-14 sm:h-14 z-0"></span>
-              <span className="text-4xl sm:text-7xl font-extrabold relative z-10">500+</span>
+              <span className="text-3xl sm:text-7xl font-extrabold relative z-10">500+</span>
             </div>
             <p className="text-xs sm:text-sm mt-1 relative z-10">CLIENTS SATISFACTIONS</p>
           </div>
@@ -261,7 +261,7 @@ const About: NextPage<Props> = ({ }) => {
           <div className="w-1/2 sm:w-auto">
             <div className="relative inline-block">
               <span className="absolute -top-3 -left-3 bg-gradient-to-r from-orange-600 to-orange-400 rounded-full w-10 h-10 sm:w-14 sm:h-14 z-0"></span>
-              <span className="text-4xl sm:text-7xl font-extrabold relative z-10">10+</span>
+              <span className="text-3xl sm:text-7xl font-extrabold relative z-10">10+</span>
             </div>
             <p className="text-xs sm:text-sm mt-1 relative z-10">AWARDS</p>
           </div>
@@ -281,7 +281,7 @@ const About: NextPage<Props> = ({ }) => {
           <div className="w-1/2 sm:w-auto">
             <div className="relative inline-block">
               <span className="absolute -top-3 -left-3 bg-gradient-to-r from-orange-600 to-orange-400 rounded-full w-10 h-10 sm:w-14 sm:h-14 z-0"></span>
-              <span className="text-4xl sm:text-7xl font-extrabold relative z-10">15+</span>
+              <span className="text-3xl sm:text-7xl font-extrabold relative z-10">15+</span>
             </div>
             <p className="text-xs sm:text-sm mt-1 relative z-10">TEAM MEMBERS</p>
           </div>

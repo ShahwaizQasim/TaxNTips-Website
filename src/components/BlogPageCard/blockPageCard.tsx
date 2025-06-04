@@ -1,8 +1,9 @@
-
-import { ArrowRight, CalendarDays, MessageCircle, User } from "lucide-react";
+'use client'
+import { CalendarDays, MessageCircle, User } from "lucide-react";
 import Link from "next/link";
 
 type BlogCardProps = {
+  id:string,
   category: string;
   date: string;
   title: string;
@@ -12,9 +13,9 @@ type BlogCardProps = {
   slug: string;
 }
 
-const BlogPageCard = ({ category, title, date, image, post_by,updated_at, slug }: BlogCardProps) => (
+const BlogPageCard = ({ category, title, date, image, post_by, updated_at,id, slug }: BlogCardProps) => (
   <>
-
+<Link href={`/blog/${id}`} className="no-underline text-inherit">
     <div className="bg-white rounded-2xl overflow-hidden transition group relative">
       <img
         src={image}
@@ -23,6 +24,7 @@ const BlogPageCard = ({ category, title, date, image, post_by,updated_at, slug }
         height={250}
         className="w-full h-52 object-cover group-hover:scale-105 transition-all duration-300"
       />
+      <h1>Blog Page Card</h1>
 
       <div className="p-5">
         {/* Top row: category and date */}
@@ -38,22 +40,24 @@ const BlogPageCard = ({ category, title, date, image, post_by,updated_at, slug }
         <h3 className="font-bold text-gray-900 text-[18px] mt-2 mb-3 text-left">
           {title}
         </h3>
-         <div className="mt-3 flex items-center gap-6 text-sm text-gray-600 bg-[#fff2ef] px-4 py-2 rounded-full w-full">
-                    <span className="flex items-center gap-1 text-[11px]">
-                        <User className="text-orange-500 text-[11px]" />
-                        {post_by}
-                    </span>
-                    <span className="flex items-center gap-1 text-[11px]">
-                        <MessageCircle className="text-orange-500 text-[11px]" />
-                        No Comments
-                    </span>
-                      <span className="flex items-center gap-1 text-[11px]">
-                       <CalendarDays className="text-orange-500 text-[11px]" />
-                        {updated_at.slice(0,10)}
-                    </span>
-                </div>
+        <div className="mt-3 flex items-center gap-6 text-sm text-gray-600 bg-[#fff2ef] px-4 py-2 rounded-full w-full">
+          <span className="flex items-center gap-1 text-[11px]">
+            <User className="text-orange-500 text-[11px]" />
+            {post_by}
+          </span>
+          <span className="flex items-center gap-1 text-[11px]">
+            <MessageCircle className="text-orange-500 text-[11px]" />
+            No Comments
+          </span>
+          <span className="flex items-center gap-1 text-[11px]">
+            <CalendarDays className="text-orange-500 text-[11px]" />
+            {updated_at.slice(0, 10)}
+          </span>
+        </div>
       </div>
     </div>
+</Link>
+
   </>
 );
 

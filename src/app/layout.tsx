@@ -2,6 +2,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import CustomCursor from "@/components/customCursor/cursor";
+import ClientOnly from "@/components/clientOnly/clientOnly";
 
 export const metadata: Metadata = {
   title: "Tax N Tips",
@@ -17,9 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased`}
       >
-        <CustomCursor />
+        <ClientOnly>
+          <CustomCursor />
+        </ClientOnly>
         {children}
       </body>
     </html>

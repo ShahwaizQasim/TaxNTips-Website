@@ -9,6 +9,7 @@ import ChooseTax from "@/components/chooseTax/chooseTax";
 import Footer from "@/components/footer/footer";
 import BlogSection from "@/components/blogsSection/blogs";
 import TestimonialSection from "@/components/Testimonial/testimonial";
+import HomeBlog from "@/components/HomeBlog/homeBlog";
 
 export default function Home() {
   return (
@@ -23,7 +24,7 @@ export default function Home() {
       <AccountingFeatures />
       </div>
       <ChooseTax />
-      <BlogSection />
+      <HomeBlog />
       <TestimonialSection />
       <Footer />
     </>

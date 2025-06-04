@@ -14,7 +14,6 @@ const BannerSection: NextPage<Props> = ({ }) => {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          backgroundAttachment: "fixed",
 
         }}>
 
@@ -23,12 +22,12 @@ const BannerSection: NextPage<Props> = ({ }) => {
             {/* Top contact + icons */}
             <div className="lg:flex justify-between py-[1vw] px-[10vw] relative lg:block hidden py-4 mb-4">
               <div className="flex gap-10">
-                <h1 className="mr-4 flex gap-2">
-                  <MapPin style={{ color: '#ED6F20' }} />
+                <h1 className="mr-4 flex gap-2 text-sm">
+                  <MapPin size={20} style={{ color: '#ED6F20' }} />
                   PO Box 11224 Spring, TX, United States, Texas 77379
                 </h1>
-                <h1 className="flex gap-2">
-                  <Phone style={{ color: '#ED6F20' }} />
+                <h1 className="flex gap-2 text-sm">
+                  <Phone size={20} style={{ color: '#ED6F20' }} />
                   +786 688 7861
                 </h1>
               </div>

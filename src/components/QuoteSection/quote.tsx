@@ -106,7 +106,6 @@ const QuoteSection: React.FC = () => {
                                 Get a quote
                             </button>
                             </Link>
-                          
                         </div>
                     </div>
                 </div>

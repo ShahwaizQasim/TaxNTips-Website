@@ -13,7 +13,7 @@ interface ServiceItem {
 
 interface RelatedService {
     name: string;
-    href: string;
+    link: string;
 }
 
 interface Props { }
@@ -46,11 +46,11 @@ const services: ServiceItem[] = [
 ];
 
 const relatedServices: RelatedService[] = [
-    { name: 'Bookkeeping Services', href: '#' },
-    { name: 'Business & LLC Set-Up', href: '#' },
-    { name: 'Business Tax Preparation', href: '#' },
-    { name: 'S Corp Set-up', href: '#' },
-    { name: 'Tax Strategy & Resolution', href: '#' }
+    { name: 'Bookkeeping Services', link: '/service/bookkeeping' },
+    { name: 'Business & LLC Set-Up', link: '/service/llc' },
+    { name: 'Business Tax Preparation', link: '/service/business-tax' },
+    { name: 'S Corp Set-up', link: '/service/s-corp' },
+    { name: 'Tax Strategy & Resolution', link: '/service/tax-strategy' }
 ];
 
 
@@ -64,7 +64,6 @@ const BusinessTax: NextPage<Props> = ({ }) => {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
-                backgroundAttachment: "fixed",
 
             }}>
 
@@ -73,12 +72,12 @@ const BusinessTax: NextPage<Props> = ({ }) => {
                     {/* Top contact + icons */}
                     <div className="lg:flex justify-between py-[1vw] px-[10vw] relative lg:block hidden py-4 mb-4">
                         <div className="flex gap-10">
-                            <h1 className="mr-4 flex gap-2">
-                                <MapPin style={{ color: '#ED6F20' }} />
+                            <h1 className="mr-4 flex gap-2 text-sm">
+                                <MapPin size={20} style={{ color: '#ED6F20' }} />
                                 PO Box 11224 Spring, TX, United States, Texas 77379
                             </h1>
-                            <h1 className="flex gap-2">
-                                <Phone style={{ color: '#ED6F20' }} />
+                            <h1 className="flex gap-2 text-sm">
+                                <Phone size={20} style={{ color: '#ED6F20' }} />
                                 +786 688 7861
                             </h1>
                         </div>
@@ -191,7 +190,7 @@ const BusinessTax: NextPage<Props> = ({ }) => {
                     </div>
 
                     {/* Sidebar */}
-                    <div className="lg:col-span-1 rounded-lg mt-[100px] sticky top-0">
+                    <div className="lg:col-span-1 rounded-lg mt-[100px] bg-[#F7F7F7] sticky top-0">
                         {/* Search Section */}
                         <div className="p-6 mb-6 ">
                             <h3 className="text-2xl font-semibold text-black mb-4"><span className='relative bottom-[9px] right-2 text-orange-400'>__</span>Search</h3>
@@ -214,24 +213,24 @@ const BusinessTax: NextPage<Props> = ({ }) => {
                             <h3 className="text-2xl font-semibold text-black mb-4"><span className='relative bottom-[9px] right-2 text-orange-400'>__</span>Related Services</h3>
                             <div className="space-y-3">
                                 {relatedServices.map((cat, i) => (
-                                    <div
-                                        key={i}
-                                        className="flex justify-between items-center px-4 py-4 mt-4 rounded-3xl overflow-hidden
+                                        <Link key={i} href={cat.link}>
+                                            <div
+                                                className="flex justify-between items-center px-4 py-4 mt-4 rounded-3xl overflow-hidden
                bg-white hover:bg-gradient-to-l from-orange-400 to-orange-300
-               transition-all duration-500 ease-in-out group interactive"
-                                    >
-                                        <span className="text-sm font-medium 
+               transition-all duration-500 ease-in-out group interactive cursor-pointer"
+                                            >
+                                                <span className="text-sm font-medium 
                    group-hover:text-white transition-colors duration-300">
-                                            {cat.name}
-                                        </span>
+                                                    {cat.name}
+                                                </span>
 
-                                        <span className="bg-orange-100 text-orange-500 rounded-full p-2 
+                                                <span className="bg-orange-100 text-orange-500 rounded-full p-2 
                      group-hover:bg-orange-600 group-hover:text-white transition-colors duration-300">
-                                            <ArrowRight size={20} />
-                                        </span>
-                                    </div>
+                                                    <ArrowRight size={20} />
+                                                </span>
+                                            </div>
+                                        </Link>
                                 ))}
-
                             </div>
                         </div>
 

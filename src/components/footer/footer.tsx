@@ -23,17 +23,16 @@ const Footer = () => {
               Read More
             </button>
           </Link>
-
         </div>
 
         {/* Resources */}
         <div>
           <h3 className="text-2xl font-bold mb-4">Resources</h3>
           <ul className="space-y-4 text-gray-300 text-[16px]">
-            <li>➤ Bookkeeping Services</li>
-            <li>➤ Business Tax Preparation</li>
-            <li>➤ Tax Strategy & Reduction Planning</li>
-            <li>➤ Business & LLC Set-Up</li>
+            <li className="flex items-center gap-2"><img src="/arrow copy.png" alt="arrow" className='w-8 h-8' /> Bookkeeping Services</li>
+            <li className="flex items-center gap-2"><img src="/arrow copy.png" alt="arrow" className='w-8 h-8' /> Business Tax Preparation</li>
+            <li className="flex items-center gap-2"><img src="/arrow copy.png" alt="arrow" className='w-8 h-8' /> Tax Strategy & Reduction Planning</li>
+            <li className="flex items-center gap-2"><img src="/arrow copy.png" alt="arrow" className='w-8 h-8' /> Business & LLC Set-Up</li>
           </ul>
         </div>
 
@@ -41,14 +40,14 @@ const Footer = () => {
         <div>
           <h3 className="text-2xl  font-bold mb-4">Company</h3>
           <ul className="space-y-4 text-[16px] text-gray-300 interactive    ">
-            <li className="flex items-center gap-2">
-              <Phone className="text-orange-500 w-4 h-4" /> +786 688 7861
+            <li className="flex items-center gap-2 ">
+              <img src="/phone.png" alt="" className='w-10 h-10' /> +786 688 7861
             </li>
             <li className="flex items-center gap-2">
-              <Mail className="text-orange-500 w-4 h-4" /> info@taxntips.com
+              <img src="/email.png" alt="" className='w-10 h-10' /> info@taxntips.com
             </li>
             <li className="flex items-center gap-2">
-              <MapPin className="text-orange-500 w-4 h-4" /> 7717 Louetta Rd, #11224, Spring, TX 77379
+              <img src="/linkIcon.png" alt="" className='w-10 h-10' /> 7717 Louetta Rd, #11224, Spring, TX 77379
             </li>
           </ul>
         </div>

@@ -145,7 +145,7 @@ const Navbar2: React.FC<Props> = () => {
           {/* Right Button */}
           <div className="hidden md:block absolute right-0">
             <Link href={'/contact'}>  
-            <button className="bg-white text-black font-semibold py-2 px-5 rounded-4xl transition hover:scale-105">
+            <button className="bg-white text-black font-semibold py-2 px-5 rounded-4xl transition hover:scale-105 cursor-pointer interactive">
               Get a Quote
             </button>
             </Link>

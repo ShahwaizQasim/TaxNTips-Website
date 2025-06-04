@@ -1,5 +1,6 @@
 import React from 'react';
 import { Search, Phone, Mail, CheckCircle, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 interface ServiceItem {
     id: string;
@@ -8,7 +9,7 @@ interface ServiceItem {
 
 interface RelatedService {
     name: string;
-    href: string;
+    link: string;
 }
 
 const BusinessTaxContent: React.FC = () => {
@@ -39,13 +40,14 @@ const BusinessTaxContent: React.FC = () => {
         }
     ];
 
-    const relatedServices: RelatedService[] = [
-        { name: 'Bookkeeping Services', href: '#' },
-        { name: 'Business & LLC Set-Up', href: '#' },
-        { name: 'Business Tax Preparation', href: '#' },
-        { name: 'S Corp Set-up', href: '#' },
-        { name: 'Tax Strategy & Resolution', href: '#' }
-    ];
+  const relatedServices: RelatedService[] = [
+    { name: 'Bookkeeping Services', link: '/service/bookkeeping' },
+    { name: 'Business & LLC Set-Up', link: '/service/llc' },
+    { name: 'Business Tax Preparation', link: '/service/business-tax' },
+    { name: 'S Corp Set-up', link: '/service/s-corp' },
+    { name: 'Tax Strategy & Resolution', link: '/service/tax-strategy' }
+];
+
 
     return (
         <>
@@ -116,7 +118,7 @@ const BusinessTaxContent: React.FC = () => {
                         </div>
 
                         {/* Sidebar */}
-                        <div className="lg:col-span-1 rounded-lg mt-[100px] sticky top-0">
+                        <div className="lg:col-span-1 rounded-lg mt-[100px] bg-[#F7F7F7] sticky top-0">
                             {/* Search Section */}
                             <div className="p-6 mb-6 ">
                                 <h3 className="text-2xl font-semibold text-black mb-4"><span className='relative bottom-[9px] right-2 text-orange-400'>__</span>Search</h3>
@@ -138,24 +140,25 @@ const BusinessTaxContent: React.FC = () => {
                             <div className=" rounded-lg p-6 mb-6 relative bottom-[30px]">
                                 <h3 className="text-2xl font-semibold text-black mb-4"><span className='relative bottom-[9px] right-2 text-orange-400'>__</span>Related Services</h3>
                                 <div className="space-y-3">
-                                    {relatedServices.map((cat, i) => (
-                                        <div
-                                            key={i}
-                                            className="flex justify-between items-center px-4 py-4 mt-4 rounded-3xl overflow-hidden
+                                   {relatedServices.map((cat, i) => (
+                                        <Link key={i} href={cat.link}>
+                                            <div
+                                                className="flex justify-between items-center px-4 py-4 mt-4 rounded-3xl overflow-hidden
                bg-white hover:bg-gradient-to-l from-orange-400 to-orange-300
-               transition-all duration-500 ease-in-out group interactive"
-                                        >
-                                            <span className="text-sm font-medium 
+               transition-all duration-500 ease-in-out group interactive cursor-pointer"
+                                            >
+                                                <span className="text-sm font-medium 
                    group-hover:text-white transition-colors duration-300">
-                                                {cat.name}
-                                            </span>
+                                                    {cat.name}
+                                                </span>
 
-                                            <span className="bg-orange-100 text-orange-500 rounded-full p-2 
+                                                <span className="bg-orange-100 text-orange-500 rounded-full p-2 
                      group-hover:bg-orange-600 group-hover:text-white transition-colors duration-300">
-                                                <ArrowRight size={20} />
-                                            </span>
-                                        </div>
-                                    ))}
+                                                    <ArrowRight size={20} />
+                                                </span>
+                                            </div>
+                                        </Link>
+                                ))}
 
                                 </div>
                             </div>

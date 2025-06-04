@@ -2,10 +2,10 @@
 import { ArrowRight, CheckCircle, Phone, Search } from 'lucide-react';
 import { NextPage } from 'next'
 import BlogSection from '../blogsSection/blogs';
-import Link from 'next/link';
 import BlogCard from '../blogPostCard/card';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Link from 'next/link';
 
 interface Props { }
 
@@ -30,18 +30,15 @@ const relatedServices: RelatedService[] = [
     { name: 'Business Tax Preparation', link: '/service/business-tax' },
 ];
 
-const BlogContentPage: NextPage<Props> = ({ }) => {
+const BlogContentPage: NextPage<Props> = ({}) => {
 
     const [blogs, setBlogs] = useState<BlogCardProps[]>([]);
-
     console.log(blogs, "blogs");
-
 
     const fetchBlogs = async () => {
         try {
             try {
                 const response = await axios.post('https://taxban-2a33cb313426.herokuapp.com/blog/getBlogs');
-                console.log("data", response.data.data);
                 setBlogs(response.data.data);
             } catch (err) {
                 console.error("Error fetching blogs:", err);
@@ -90,25 +87,22 @@ const BlogContentPage: NextPage<Props> = ({ }) => {
                             <h3 className="text-2xl font-semibold text-black mb-4"><span className='relative bottom-[9px] right-2 text-orange-400'>__</span>Related Services</h3>
                             <div className="space-y-3">
                                 {relatedServices.map((cat, i) => (
-                                    <div
-                                        key={i}
-                                        className="flex justify-between items-center px-4 py-4 mt-4 rounded-3xl overflow-hidden
+                                    <Link href={`${cat.link}`} key={i}>
+                                        <div
+                                            className="flex justify-between items-center px-4 py-4 mt-4 rounded-3xl overflow-hidden
                bg-white hover:bg-gradient-to-l from-orange-400 to-orange-300
                transition-all duration-500 ease-in-out group interactive"
-                                    >
-                                        <span className="text-sm font-medium 
+                                        >
+                                            <span className="text-sm font-medium 
                    group-hover:text-white transition-colors duration-300">
-                                            {cat.name}
-                                        </span>
-
-                                        <span className="bg-orange-100 text-orange-500 rounded-full p-2 
+                                                {cat.name}
+                                            </span>
+                                            <span className="bg-orange-100 text-orange-500 rounded-full p-2 
                      group-hover:bg-orange-600 group-hover:text-white transition-colors duration-300">
-                                            <Link href={`${cat.link}`}>
                                                 <ArrowRight size={20} />
-                                            </Link>
-                                        </span>
-
-                                    </div>
+                                            </span>
+                                        </div>
+                                    </Link>
                                 ))}
                             </div>
                         </div>
@@ -120,8 +114,8 @@ const BlogContentPage: NextPage<Props> = ({ }) => {
                             <div className="space-y-3">
                                 {blogs.map((cat, i) => (
                                     <BlogCard key={i} title={cat.title}
-    imageSrc={cat.image || '/default.jpg'}
-    updated_at={cat.date || '2025-01-01'} />
+                                        imageSrc={cat.image || '/default.jpg'}
+                                        updated_at={cat.date || '2025-01-01'} />
                                 ))}
                             </div>
                         </div>

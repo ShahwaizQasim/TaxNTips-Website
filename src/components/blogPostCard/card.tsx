@@ -14,7 +14,7 @@ const BlogCard: FC<BlogCardProps> = ({ imageSrc, title, updated_at }: BlogCardPr
             <img
                 src={imageSrc}
                 alt={title}
-                className="w-14 h-14 rounded-md object-cover"
+                className="w-16 h-16 rounded-md object-cover"
             />
             <div className="flex-1">
                 <h2 className="font-semibold text-sm text-wrap text-gray-900 leading-snug">

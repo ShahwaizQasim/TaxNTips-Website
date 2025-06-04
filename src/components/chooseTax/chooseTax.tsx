@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 export default function ChooseTax() {
 
@@ -64,12 +65,12 @@ export default function ChooseTax() {
 
 
       {/* Right Side - Text Content */}
-      <div className="w-full md:w-1/2 text-center md:text-left px-2 sm:px-6 md:px-0">
-        <p className="text-orange-500 font-semibold text-sm mb-2">
+      <div className="w-full md:w-1/2 text-center md:text-left px-2 sm:px-6 md:px-0 relative left-10">
+        <p className="text-orange-500 font-semibold text-sm mb-2 italic">
           ✨ Why you choose Us?
         </p>
         <motion.h1
-          className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4 flex flex-wrap justify-center md:justify-start"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4 flex flex-wrap justify-center md:justify-start pr-48" 
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -84,7 +85,7 @@ export default function ChooseTax() {
             </motion.span>
           ))}
         </motion.h1>
-        <p className="text-gray-600 mb-6 max-w-xl mx-auto md:mx-0 text-base sm:text-lg leading-relaxed">
+        <p className="text-gray-500 mb-6 max-w-xl mx-auto md:mx-0 text-base sm:text-lg leading-relaxed pr-36">
           At TaxNTips, we are dedicated to helping individuals and businesses achieve financial success through expert tax strategies, business consulting, and financial planning solutions. Whether you're a startup looking for business formation guidance or an established company aiming to optimize tax savings and streamline operations, we provide tailored solutions, expert advice, and ongoing support to drive your success.
         </p>
         <ul className="text-left max-w-xl mx-auto md:mx-0 space-y-3 mb-6">
@@ -96,9 +97,12 @@ export default function ChooseTax() {
           ))}
         </ul>
         <Link href={'/about'}>
-          <button className="bg-gradient-to-r from-orange-500 to-red-500 interactive cursor-pointer text-white px-6 py-3 rounded-full font-semibold shadow-md hover:scale-105 transition-transform duration-300">
-            Learn More
-          </button>
+          <button className="group cursor-none bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 cursor-pointer rounded-full font-semibold hover:scale-105 transition-transform duration-200 flex items-center gap-3 interactive">
+          <div className='bg-white rounded-full p-1'>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform text-black duration-200" />
+                </div>
+                Learn More
+              </button>
         </Link>
       </div>
     </section>

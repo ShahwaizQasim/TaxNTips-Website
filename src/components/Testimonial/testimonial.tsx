@@ -49,6 +49,93 @@ export default function TestimonialSection() {
 
   return (
     <section className="py-16 sm:py-24 bg-white px-4 sm:px-6 md:px-12 lg:px-24">
+
+       <section
+        className="bg-cover mt-15 mb-14 bg-center flex items-center lg:justify-center justify-start px-4 py-12 sm:px-6 md:px-8"
+      >
+        <div className="max-w-7xl mx-auto flex flex-wrap justify-center items-center gap-6 sm:gap-8 md:gap-10 text-white text-center">
+          {/* Item 1 */}
+          <div className="w-1/2 sm:w-auto">
+            <div className="relative inline-block">
+            <div className="flex items-center gap-2">
+              <img src="/hand.png" alt="" className='w-16 h-16' />
+              <span className="text-3xl lg:text-[56px] sm:text-7xl font-extrabold relative z-10 text-black">10+</span>
+            </div>
+            </div>
+            <p className="text-xs sm:text-sm mt-1 relative z-10 text-gray-500 pl-14">Client Satisfactions</p>
+          </div>
+
+          {/* Separator */}
+          <span
+            className="text-xl sm:text-2xl font-bold inline-block"
+            style={{
+              animation: 'spin 3s linear infinite',
+              display: 'inline-block',
+            }}
+          >
+            ✻
+          </span>
+
+          {/* Item 2 */}
+          <div className="w-1/2 sm:w-auto">
+             <div className="flex items-center gap-2">
+              <img src="/awards.png" alt="" className='w-16 h-16' />
+              <span className="text-3xl lg:text-[56px] sm:text-7xl font-extrabold relative z-10 text-black">10+</span>
+            </div>
+            <p className="text-xs sm:text-sm mt-1 relative z-10 text-gray-500 pl-14">Awards</p>
+          </div>
+
+          {/* Separator */}
+          <span
+            className="text-xl sm:text-2xl font-bold inline-block"
+            style={{
+              animation: 'spin 3s linear infinite',
+              display: 'inline-block',
+            }}
+          >
+            ✻
+          </span>
+
+          {/* Item 3 */}
+          <div className="w-1/2 sm:w-auto">
+            <div className="flex items-center gap-2">
+              <img src="/bulb.png" alt="" className='w-16 h-16' />
+              <span className="text-3xl lg:text-[56px] sm:text-7xl font-extrabold relative z-10 text-black">1000+</span>
+            </div>
+            <p className="text-xs sm:text-sm mt-1 relative z-10 text-gray-500 pl-14">Project Complete</p>
+          </div>
+
+          {/* Separator */}
+          <span
+            className="text-xl sm:text-2xl font-bold inline-block"
+            style={{
+              animation: 'spin 3s linear infinite',
+              display: 'inline-block',
+            }}
+          >
+            ✻
+          </span>
+
+          {/* Item 4 */}
+          <div className="w-1/2 sm:w-auto">
+          <div className="flex items-center gap-2">
+              <img src="/unKnown.png" alt="" className='w-16 h-16' />
+              <span className="text-3xl lg:text-[56px] sm:text-7xl font-extrabold relative z-10 text-black">10+</span>
+            </div>
+            <p className="text-xs sm:text-sm mt-1 relative z-10 text-gray-500 pl-14">Team Members</p>
+          </div>
+          <span
+            className="text-xl sm:text-2xl font-bold inline-block"
+            style={{
+              animation: 'spin 3s linear infinite',
+              display: 'inline-block',
+            }}
+          >
+            ✻
+          </span>
+        </div>
+      </section>
+
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
 
         {/* Side avatars + buttons */}
@@ -92,8 +179,8 @@ export default function TestimonialSection() {
         </div>
 
         {/* Large avatar */}
-        <div className="flex justify-center order-1 md:order-2">
-          <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full overflow-hidden shadow-lg">
+        <div className="flex justify-center order-1 md:order-2 relative right-32">
+          <div className="lg:w-98 lg:h-98 h-64 w-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full shadow-lg">
             <img
               src={active.mainImage}
               alt={active.name}
@@ -103,14 +190,14 @@ export default function TestimonialSection() {
         </div>
 
         {/* Text content */}
-        <div className="text-left space-y-4 px-4 sm:px-6 order-3 md:order-3 max-w-xl mx-auto md:mx-0">
+        <div className="text-left space-y-4 px-4 sm:px-6 order-3 md:order-3 max-w-xl mx-auto md:mx-0 relative right-30">
           <div className="text-sm text-orange-500 italic">★ Our Feedback</div>
           <h2 className="text-3xl sm:text-4xl font-extrabold leading-tight">
             What People Say
             <br />
             About Us
           </h2>
-          <p className="text-gray-600 text-base sm:text-lg">{active.feedback}</p>
+          <p className="text-gray-600 lg:text-sm text-base sm:text-lg">{active.feedback}</p>
           <p className="mt-6 text-lg font-semibold text-gray-700">
             {active.role} <br />
             <span className="bg-gradient-to-r from-orange-500 to-orange-300 bg-[length:200%_100%] bg-left bg-clip-text text-transparent font-bold">
