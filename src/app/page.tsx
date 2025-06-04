@@ -25,9 +25,7 @@ export default function Home() {
       <ChooseTax />
       <HomeBlog />
       <TestimonialSection />
-      <div className="relative z-50">
         <Footer />
-      </div>
     </>
   );
 }

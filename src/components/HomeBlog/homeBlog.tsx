@@ -29,10 +29,6 @@ const HomeBlog = () => {
             console.error("Error fetching blogs:", err);
         }
     };
-
-    console.log(blogs, "blogs");
-
-
     useEffect(() => {
         fetchBlogs();
     }, []);
