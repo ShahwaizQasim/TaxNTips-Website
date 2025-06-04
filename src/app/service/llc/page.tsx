@@ -190,7 +190,9 @@ const BusinessTax: NextPage<Props> = ({ }) => {
                     </div>
 
                     {/* Sidebar */}
-                    <div className="lg:col-span-1 rounded-lg mt-[100px] bg-[#F7F7F7] sticky top-0">
+                    <div className="lg:col-span-1 rounded-lg mt-[100px] bg-[#F7F7F7]">
+                        <div className='sticky top-20'>
+
                         {/* Search Section */}
                         <div className="p-6 mb-6 ">
                             <h3 className="text-2xl font-semibold text-black mb-4"><span className='relative bottom-[9px] right-2 text-orange-400'>__</span>Search</h3>
@@ -251,6 +253,7 @@ const BusinessTax: NextPage<Props> = ({ }) => {
                                 <div className="text-white mb-2">Email Address</div>
                                 <div className="text-sm text-white">support@taxntips.com</div>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
